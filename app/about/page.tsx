@@ -437,7 +437,7 @@ export default function AboutPage() {
             {/* Team Member Bio */}
             <div>
               <h3 className="text-2xl font-bold text-[var(--charcoal)] mb-2">
-                Ryan Cox
+                Ryan
               </h3>
               <p className="text-[var(--red-ox-red)] font-medium mb-4">
                 Founder & Freelance Digital Marketer
