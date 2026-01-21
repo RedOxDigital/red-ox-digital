@@ -263,17 +263,6 @@ export default function HomePage() {
                     className="object-cover"
                     priority
                   />
-                  {/* Fallback if image doesn't exist */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-[var(--light-grey)]">
-                    <div className="text-center p-8">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--red-ox-red-light)] flex items-center justify-center">
-                        <svg className="w-12 h-12 text-[var(--red-ox-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-[var(--medium-grey)] text-sm">Hero image</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

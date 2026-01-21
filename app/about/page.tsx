@@ -227,27 +227,6 @@ export default function AboutPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg
-                    className="w-16 h-16 mx-auto text-[var(--medium-grey)] mb-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                  <p className="text-[var(--medium-grey)] text-sm">
-                    Mission image
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -345,27 +324,6 @@ export default function AboutPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg
-                    className="w-16 h-16 mx-auto text-[var(--medium-grey)] mb-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
-                  <p className="text-[var(--medium-grey)] text-sm">
-                    Success journey image
-                  </p>
-                </div>
-              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-[var(--red-ox-red)] text-white p-6 rounded-xl shadow-lg hidden md:block">
               <p className="text-4xl font-bold mb-1">You</p>
@@ -474,27 +432,6 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[var(--red-ox-red-light)] flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-[var(--red-ox-red)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-[var(--medium-grey)] text-sm">Team photo</p>
-                </div>
-              </div>
             </div>
 
             {/* Team Member Bio */}
