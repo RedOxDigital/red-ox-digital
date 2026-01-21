@@ -427,7 +427,7 @@ export default function AboutPage() {
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-[var(--light-grey)]">
               <Image
                 src="/images/team-ryan-placeholder.jpg"
-                alt="Ryan from Red Ox Digital, freelance digital marketer in North Brisbane"
+                alt="Local North Brisbane tradesperson at work - the type of business Red Ox Digital helps grow"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
