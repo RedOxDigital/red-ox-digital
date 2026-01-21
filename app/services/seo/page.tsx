@@ -406,18 +406,24 @@ export default function SEOServicesPage() {
       {/* Testimonial Section */}
       <Section background="light" padding="lg">
         <SectionHeader
-          subtitle="Client Feedback"
+          subtitle="Google Reviews"
           title="What Our Clients Say"
           description="Real results from real businesses who trusted us with their SEO."
         />
-        <div className="max-w-2xl mx-auto">
+        <Grid cols={2} gap="lg">
           <TestimonialCard
-            quote="We went from page 3 to the top of Google in six months. Now we get calls every week from people who found us online."
-            author="[North Brisbane Business]"
-            role="Business Owner"
-            company="North Brisbane"
+            quote="When I first tried Google Ads, I wasted so much money. When I met Ryan at Red Ox Digital, he explained SEO so simply. Now we spend less money and actually generate strong leads that are converting to business."
+            author="Stephen Adnams"
+            role="Owner"
+            company="SEQ Medical"
           />
-        </div>
+          <TestimonialCard
+            quote="We're showing up on ChatGPT and Gemini, climbing the Google rankings, and our Google Ads spend is down significantly. If you're sick of not knowing what your marketing dollars are doing, talk to Red Ox Digital."
+            author="Ivan Szaks"
+            role="Business Owner"
+            company="Google Review"
+          />
+        </Grid>
       </Section>
 
       {/* Service Areas Section */}

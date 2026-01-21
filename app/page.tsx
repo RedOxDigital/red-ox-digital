@@ -65,25 +65,25 @@ const processSteps = [
   },
 ];
 
-// Testimonials
+// Testimonials - Real Google Reviews
 const testimonials = [
   {
-    quote: "Ryan helped us get to the first page of Google. We went from barely any calls to getting new enquiries every week. Best investment we have made.",
-    author: "Sarah Mitchell",
-    role: "Owner",
-    company: "North Lakes Accounting",
+    quote: "Ryan from Red Ox Digital has been incredible with helping my new company with our website and corporate videos. His attention to detail and guidance on direction was incredibly insightful.",
+    author: "Jodi Visser",
+    role: "Business Owner",
+    company: "Google Review",
   },
   {
-    quote: "Finally, someone who explains things in plain English. Our new website looks great and we are getting twice as many quote requests.",
-    author: "James Chen",
-    role: "Director",
-    company: "Brendale Industrial Supplies",
+    quote: "Huge shoutout to Ryan for helping us get our shop's digital side in order! He did a fantastic job overhauling our website and Google profile, making everything look professional and easy to find.",
+    author: "Carly Stone",
+    role: "Business Owner",
+    company: "Google Review",
   },
   {
-    quote: "I was spending too much on ads that did not work. Red Ox fixed our campaigns and now I know exactly where my leads come from.",
-    author: "Michelle Torres",
-    role: "Owner",
-    company: "Narangba Family Dental",
+    quote: "When I first tried Google Ads, I wasted so much money. When I met Ryan at Red Ox Digital, he explained SEO so simply. Now we spend less money and actually generate strong leads that are converting to business.",
+    author: "Stephen Adnams",
+    role: "Owner, SEQ Medical",
+    company: "Google Review",
   },
 ];
 

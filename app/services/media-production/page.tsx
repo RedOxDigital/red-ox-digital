@@ -494,16 +494,30 @@ export default function MediaProductionPage() {
       {/* Testimonial Section */}
       <Section background="light" padding="lg">
         <SectionHeader
-          subtitle="Client Feedback"
+          subtitle="Google Reviews"
           title="What Our Clients Say"
           description="Real results from real businesses who trusted us with their media production."
         />
-        <div className="max-w-2xl mx-auto">
+        <Grid cols={2} gap="lg">
           <TestimonialCard
-            quote="The photos and videos have been brilliant for our socials. People actually stop scrolling when they see our content now."
-            author="[Retail Store Owner]"
+            quote="Ryan from Red Ox Digital has been incredible with helping my new company with our website and corporate videos. His attention to detail and guidance on direction was incredibly insightful."
+            author="Jodi Visser"
             role="Business Owner"
-            company="North Brisbane"
+            company="Google Review"
+          />
+          <TestimonialCard
+            quote="Amazing experience from start to finish. The website looks great and the product photography and videos turned out even better than expected. They really understood our brand and made the process effortless."
+            author="Jarred Harriss"
+            role="Business Owner"
+            company="Google Review"
+          />
+        </Grid>
+        <div className="mt-8 max-w-2xl mx-auto">
+          <TestimonialCard
+            quote="Reached out to Red Ox Digital to rebuild our website. They also took care of our digital marketing too, on top of that they took drone footage and photos at no extra cost. Highly recommend."
+            author="Ken Gilkison"
+            role="Business Owner"
+            company="Google Review"
           />
         </div>
       </Section>

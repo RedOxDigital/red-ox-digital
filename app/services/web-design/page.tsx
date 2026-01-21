@@ -429,16 +429,30 @@ export default function WebDesignPage() {
       {/* Testimonial Section */}
       <Section background="light" padding="lg">
         <SectionHeader
-          subtitle="Client Feedback"
+          subtitle="Google Reviews"
           title="What Our Clients Say"
           description="Real results from real businesses who trusted us with their web design."
         />
-        <div className="max-w-2xl mx-auto">
+        <Grid cols={2} gap="lg">
           <TestimonialCard
-            quote="Our new website has completely changed how customers see us. The design is clean, loads fast, and actually brings in enquiries."
-            author="[Local Business Owner]"
+            quote="Reached out to Red Ox Digital to rebuild our website, looking for a professional but user friendly design. Ryan and his team delivered. They also took drone footage and photos at no extra cost."
+            author="Ken Gilkison"
             role="Business Owner"
-            company="North Brisbane"
+            company="Google Review"
+          />
+          <TestimonialCard
+            quote="I'm a plumber and used Red Ox to get my website up and running, got some photos for my website. Could not have been happier with the results. Great service, easy to communicate with."
+            author="Ben Bullis"
+            role="Plumber"
+            company="Google Review"
+          />
+        </Grid>
+        <div className="mt-8 max-w-2xl mx-auto">
+          <TestimonialCard
+            quote="Amazing experience from start to finish. The website looks great and the product photography and videos turned out even better than expected. They really understood our brand."
+            author="Jarred Harriss"
+            role="Business Owner"
+            company="Google Review"
           />
         </div>
       </Section>

@@ -523,18 +523,24 @@ export default function PaidAdsPage() {
       {/* Testimonial Section */}
       <Section background="light" padding="lg">
         <SectionHeader
-          subtitle="Client Feedback"
+          subtitle="Google Reviews"
           title="What Our Clients Say"
-          description="Real results from real businesses who trusted us with their Google Ads."
+          description="Real results from real businesses who trusted us with their paid advertising."
         />
-        <div className="max-w-2xl mx-auto">
+        <Grid cols={2} gap="lg">
           <TestimonialCard
-            quote="Our Google Ads used to waste money on random clicks. Now every dollar goes to real leads who actually want our services."
-            author="[Trade Business Owner]"
-            role="Business Owner"
-            company="North Brisbane"
+            quote="When I first tried Google Ads, I wasted so much money. I was only getting random leads. When I met Ryan at Red Ox Digital, he explained SEO so simply. Now we spend less money and actually generate strong leads that are converting to business."
+            author="Stephen Adnams"
+            role="Owner"
+            company="SEQ Medical"
           />
-        </div>
+          <TestimonialCard
+            quote="Ryan was a great help to our business and we have seen the results. Highly recommend. It was fun working with him on the photoshoot and creating the Facebook ads."
+            author="Reegan Chapman"
+            role="Business Owner"
+            company="Google Review"
+          />
+        </Grid>
       </Section>
 
       {/* Service Areas Section */}
