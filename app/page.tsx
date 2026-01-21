@@ -87,13 +87,16 @@ const testimonials = [
   },
 ];
 
-// Trusted by logos (placeholders)
-const trustedByLogos = [
-  { name: "North Lakes Accounting", alt: "North Lakes Accounting logo" },
-  { name: "Brendale Industrial", alt: "Brendale Industrial Supplies logo" },
-  { name: "Narangba Dental", alt: "Narangba Family Dental logo" },
-  { name: "Dakabin Auto", alt: "Dakabin Automotive logo" },
-  { name: "Kallangur Trades", alt: "Kallangur Trades logo" },
+// Google Reviews data
+const googleReviews = [
+  { name: "Reegan Chapman", review: "Ryan was a great help to our business and we have seen the results. Highly recommend." },
+  { name: "Carly Stone", review: "Huge shoutout to Ryan for helping us get our shop's digital side in order!" },
+  { name: "Jodi Visser", review: "His attention to detail and guidance on direction was incredibly insightful." },
+  { name: "Ken Gilkison", review: "They delivered a professional but user friendly design. Highly recommend." },
+  { name: "Jarred Harriss", review: "Amazing experience from start to finish. The website looks great." },
+  { name: "Ben Bullis", review: "Could not have been happier with the results. Great service, easy to communicate with." },
+  { name: "Stephen Adnams", review: "We spend less money and actually generate strong leads that are converting." },
+  { name: "Ivan Szaks", review: "If you're sick of not knowing what your marketing dollars are doing, talk to Red Ox Digital." },
 ];
 
 // FAQ item type
@@ -270,23 +273,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="bg-white border-y border-[var(--border-grey)] py-8 md:py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-[var(--medium-grey)] mb-6 uppercase tracking-wide font-medium">
-            Trusted by North Brisbane Businesses
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {trustedByLogos.map((logo, index) => (
+      {/* Trust Bar - Google Reviews Infinite Scroll */}
+      <section className="bg-white border-y border-[var(--border-grey)] py-8 md:py-12 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
+          <div className="flex items-center justify-center gap-2">
+            <svg className="w-5 h-5 text-[#4285F4]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+            </svg>
+            <p className="text-center text-sm text-[var(--medium-grey)] uppercase tracking-wide font-medium">
+              Trusted by North Brisbane Businesses
+            </p>
+          </div>
+        </div>
+
+        {/* Infinite scroll container */}
+        <div className="relative">
+          {/* Gradient fade left */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          {/* Gradient fade right */}
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling track */}
+          <div className="flex animate-scroll">
+            {/* First set of reviews */}
+            {googleReviews.map((review, index) => (
               <div
-                key={index}
-                className="h-12 w-32 flex items-center justify-center bg-[var(--light-grey)] rounded-lg opacity-60 hover:opacity-100 transition-opacity"
-                aria-label={logo.alt}
+                key={`review-1-${index}`}
+                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg"
               >
-                {/* Placeholder for client logos */}
-                <span className="text-xs text-[var(--medium-grey)] text-center px-2">
-                  {logo.name}
-                </span>
+                <div className="flex items-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#FBBC04]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm text-[var(--charcoal)] mb-2 line-clamp-2">&quot;{review.review}&quot;</p>
+                <p className="text-xs text-[var(--medium-grey)] font-medium">{review.name}</p>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {googleReviews.map((review, index) => (
+              <div
+                key={`review-2-${index}`}
+                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg"
+              >
+                <div className="flex items-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#FBBC04]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm text-[var(--charcoal)] mb-2 line-clamp-2">&quot;{review.review}&quot;</p>
+                <p className="text-xs text-[var(--medium-grey)] font-medium">{review.name}</p>
               </div>
             ))}
           </div>
