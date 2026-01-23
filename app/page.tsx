@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { MobileCTA } from "@/components/layout";
 import { Button, Section, SectionHeader, Grid, ServiceCard, TestimonialCard } from "@/components/ui";
 import { generateLocalBusinessSchema, generateFAQSchema, renderSchema } from "@/lib/schema";
@@ -36,6 +36,16 @@ const services = [
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Media Production",
+    description: "Professional photography and video that showcases your business. From headshots to drone footage, we capture content that helps you stand out.",
+    href: "/services/media-production",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
       </svg>
     ),
   },
@@ -189,6 +199,44 @@ export default function HomePage() {
   const localBusinessSchema = generateLocalBusinessSchema();
   const faqSchema = generateFAQSchema(faqs);
 
+  // Reviews carousel swipe/drag functionality
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  }, []);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  }, [isDragging, startX, scrollLeft]);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (!scrollRef.current) return;
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!scrollRef.current) return;
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  }, [startX, scrollLeft]);
+
   return (
     <>
       {/* JSON-LD Schema */}
@@ -289,20 +337,30 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Infinite scroll container */}
+        {/* Swipeable scroll container */}
         <div className="relative">
           {/* Gradient fade left */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
           {/* Gradient fade right */}
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-          {/* Scrolling track */}
-          <div className="flex animate-scroll">
+          {/* Scrolling track - swipeable */}
+          <div
+            ref={scrollRef}
+            className={`flex overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing ${isDragging ? '' : 'animate-scroll'}`}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+          >
             {/* First set of reviews */}
             {googleReviews.map((review, index) => (
               <div
                 key={`review-1-${index}`}
-                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg"
+                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg select-none"
               >
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
@@ -319,7 +377,7 @@ export default function HomePage() {
             {googleReviews.map((review, index) => (
               <div
                 key={`review-2-${index}`}
-                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg"
+                className="flex-shrink-0 w-80 mx-3 p-4 bg-[var(--light-grey)] rounded-lg select-none"
               >
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
@@ -341,9 +399,9 @@ export default function HomePage() {
         <SectionHeader
           subtitle="What We Do"
           title="Marketing That Brings Real Leads"
-          description="We focus on three things that work for local businesses. No fluff, no wasted budget. Just simple strategies that help customers find you."
+          description="We focus on four things that work for local businesses. No fluff, no wasted budget. Just simple strategies that help customers find you."
         />
-        <Grid cols={3}>
+        <Grid cols={4}>
           {services.map((service) => (
             <ServiceCard
               key={service.title}
