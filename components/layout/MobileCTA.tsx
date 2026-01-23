@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 // Mobile sticky CTA bar (shows on mobile only)
 export function MobileCTA() {
@@ -45,7 +46,7 @@ export function MobileCTA() {
         </a>
 
         {/* Contact Button */}
-        <a
+        <Link
           href="/contact"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--red-ox-red)] text-white font-semibold py-3 px-4 rounded-lg min-h-[44px] transition-colors hover:bg-[var(--red-ox-red-hover)]"
           aria-label="Contact Red Ox Digital"
@@ -65,7 +66,7 @@ export function MobileCTA() {
             />
           </svg>
           Get Quote
-        </a>
+        </Link>
       </div>
     </div>
   );

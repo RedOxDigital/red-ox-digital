@@ -101,8 +101,18 @@ const nextConfig: NextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
-      // Redirect www to non-www (or vice versa - configure as needed)
-      // Add any legacy URL redirects here
+      // Redirect www to non-www
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.redoxdigital.com.au",
+          },
+        ],
+        destination: "https://redoxdigital.com.au/:path*",
+        permanent: true,
+      },
     ];
   },
 };

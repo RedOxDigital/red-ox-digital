@@ -260,7 +260,7 @@ export default function HomePage() {
                 <div className="relative bg-[var(--light-grey)] rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-2xl">
                   <Image
                     src="/images/sales-team.webp"
-                    alt="Ryan from Red Ox Digital helping a North Brisbane business owner with their digital marketing strategy"
+                    alt="Ryan from Red Ox Digital helping a North Brisbane business owner"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"

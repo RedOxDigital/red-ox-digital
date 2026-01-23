@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "North Brisbane business blog",
     "marketing for small business",
   ],
+  alternates: {
+    canonical: "https://redoxdigital.com.au/blog",
+  },
   openGraph: {
     title: "Digital Marketing Blog | Red Ox Digital",
     description:
