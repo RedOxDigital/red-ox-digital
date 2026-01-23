@@ -99,21 +99,9 @@ const nextConfig: NextConfig = {
   },
 
   // Redirects for SEO
+  // Note: www to non-www redirect is handled at Vercel/DNS level
   async redirects() {
-    return [
-      // Redirect www to non-www
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.redoxdigital.com.au",
-          },
-        ],
-        destination: "https://redoxdigital.com.au/:path*",
-        permanent: true,
-      },
-    ];
+    return [];
   },
 };
 
