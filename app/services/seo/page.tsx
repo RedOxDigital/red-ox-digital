@@ -456,7 +456,7 @@ export default function SEOServicesPage() {
             your website stands and what it would take to climb the rankings.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Get Your Free SEO Audit
             </Button>
             <Button

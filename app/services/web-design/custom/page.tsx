@@ -407,7 +407,7 @@ export default function CustomWebDesignPage() {
             choice for your business and give you a clear idea of what it involves.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Start Your Project
             </Button>
             <Button

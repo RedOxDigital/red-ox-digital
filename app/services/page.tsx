@@ -213,7 +213,7 @@ export default function ServicesPage() {
             Book a free discovery call. We will look at your business and recommend where to focus first.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Book a Discovery Call
             </Button>
             <Button

@@ -409,9 +409,8 @@ export default function BlogPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               href="/contact"
-              variant="secondary"
+              variant="light"
               size="lg"
-              className="bg-white text-[var(--red-ox-red-text)] hover:bg-[var(--off-white)]"
             >
               Book a Free Discovery Call
             </Button>

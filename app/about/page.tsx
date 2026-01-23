@@ -221,7 +221,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--light-grey)]">
               <Image
-                src="/images/mission-placeholder.jpg"
+                src="/images/business-advocates.webp"
                 alt="Red Ox Digital working with local North Brisbane business owners"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -318,7 +318,7 @@ export default function AboutPage() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--light-grey)]">
               <Image
-                src="/images/hero-journey-placeholder.jpg"
+                src="/images/lead-generation.webp"
                 alt="Business owner celebrating success after working with Red Ox Digital"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -426,7 +426,7 @@ export default function AboutPage() {
             {/* Team Member Image */}
             <div className="relative aspect-square rounded-2xl overflow-hidden bg-[var(--light-grey)]">
               <Image
-                src="/images/team-ryan-placeholder.jpg"
+                src="/images/tradies-background.webp"
                 alt="Local North Brisbane tradesperson at work - the type of business Red Ox Digital helps grow"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -580,9 +580,8 @@ export default function AboutPage() {
 
           <Button
             href="/services"
-            variant="primary"
+            variant="light"
             size="lg"
-            className="bg-white text-[var(--red-ox-red-text)] hover:bg-[var(--off-white)]"
           >
             Explore Our Services
           </Button>
@@ -603,9 +602,8 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               href="/contact"
-              variant="secondary"
+              variant="light"
               size="lg"
-              className="bg-white text-[var(--red-ox-red-text)] hover:bg-[var(--off-white)]"
             >
               Book Your Free Discovery Call
             </Button>

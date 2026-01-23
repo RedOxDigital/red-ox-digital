@@ -435,7 +435,7 @@ export default function LocalSEOPage() {
             presence and see exactly what it takes to dominate your area.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Get Your Free Local SEO Audit
             </Button>
             <Button

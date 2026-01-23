@@ -548,7 +548,7 @@ export default function MediaProductionPage() {
             business look as good as it really is.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Get a Quote
             </Button>
             <Button

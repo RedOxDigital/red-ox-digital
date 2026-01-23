@@ -487,7 +487,7 @@ export default function WebsiteRedesignPage() {
             you exactly how a redesign can improve your results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Get Your Free Site Audit
             </Button>
             <Button

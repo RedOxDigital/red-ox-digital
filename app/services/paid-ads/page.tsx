@@ -569,7 +569,7 @@ export default function PaidAdsPage() {
             campaigns or let us show you what is possible for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="light" size="lg">
               Get Your Free Ads Audit
             </Button>
             <Button

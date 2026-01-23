@@ -259,7 +259,7 @@ export default function HomePage() {
                 {/* Image placeholder */}
                 <div className="relative bg-[var(--light-grey)] rounded-3xl overflow-hidden aspect-square border-4 border-white shadow-2xl">
                   <Image
-                    src="/images/hero-placeholder.jpg"
+                    src="/images/sales-team.webp"
                     alt="Ryan from Red Ox Digital helping a North Brisbane business owner with their digital marketing strategy"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -368,21 +368,12 @@ export default function HomePage() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--light-grey)]">
               <Image
-                src="/images/about-placeholder.jpg"
+                src="/images/meeting-hero.webp"
                 alt="Red Ox Digital team working with local business owners"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              {/* Fallback */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg className="w-16 h-16 mx-auto text-[var(--medium-grey)] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-[var(--medium-grey)] text-sm">About section image</p>
-                </div>
-              </div>
             </div>
             {/* Stats overlay */}
             <div className="absolute -bottom-6 -right-6 bg-[var(--red-ox-red)] text-white p-6 rounded-xl shadow-lg hidden md:block">
@@ -548,9 +539,8 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               href="/contact"
-              variant="secondary"
+              variant="light"
               size="lg"
-              className="bg-white text-[var(--red-ox-red-text)] hover:bg-[var(--off-white)]"
             >
               Book Your Free Discovery Call
             </Button>

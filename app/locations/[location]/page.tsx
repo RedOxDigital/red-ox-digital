@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Section, SectionHeader, Grid, Button } from "@/components/ui";
 import {
   getAllLocationSlugs,
@@ -384,15 +385,15 @@ export default async function LocationPage({
           <div className="max-w-4xl mx-auto">
             <div className="bg-[var(--light-grey)] rounded-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Case Study Image Placeholder */}
-                <div className="bg-[var(--charcoal)] p-8 flex items-center justify-center min-h-[300px]">
-                  <div className="text-center">
-                    <svg className="w-16 h-16 mx-auto mb-4 text-[var(--red-ox-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <p className="text-white font-semibold">Manufacturing Client</p>
-                    <p className="text-gray-400 text-sm">{location.name} Area</p>
-                  </div>
+                {/* Case Study Image */}
+                <div className="relative min-h-[300px]">
+                  <Image
+                    src="/images/tradies-background.webp"
+                    alt={`Manufacturing client success story in ${location.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
 
                 {/* Case Study Content */}
@@ -443,15 +444,15 @@ export default async function LocationPage({
           <div className="max-w-4xl mx-auto">
             <div className="bg-[var(--light-grey)] rounded-xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Case Study Image Placeholder */}
-                <div className="bg-[var(--charcoal)] p-8 flex items-center justify-center min-h-[300px]">
-                  <div className="text-center">
-                    <svg className="w-16 h-16 mx-auto mb-4 text-[var(--red-ox-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <p className="text-white font-semibold">Local Retail Client</p>
-                    <p className="text-gray-400 text-sm">{location.name} Area</p>
-                  </div>
+                {/* Case Study Image */}
+                <div className="relative min-h-[300px]">
+                  <Image
+                    src="/images/north-lakes-location.webp"
+                    alt={`Local retail client success story in ${location.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
 
                 {/* Case Study Content */}
@@ -577,7 +578,7 @@ export default async function LocationPage({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               href="/contact"
-              variant="secondary"
+              variant="light"
               size="lg"
             >
               Book a Free Consultation
