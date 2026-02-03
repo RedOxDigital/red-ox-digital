@@ -21,11 +21,11 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-[var(--off-white)] py-16 md:py-20">
+      <section className="bg-[var(--bg-cream)] py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="mb-4">Privacy Policy</h1>
-            <p className="text-[var(--medium-grey)] text-lg">
+            <p className="text-[var(--text-grey)] text-lg">
               Last updated: {lastUpdated}
             </p>
           </div>
@@ -33,9 +33,9 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Content */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-3xl mx-auto prose prose-lg prose-gray">
-          <p className="lead text-[var(--medium-grey)] text-lg">
+          <p className="lead text-[var(--text-grey)] text-lg">
             Red Ox Digital (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting
             your privacy. This Privacy Policy explains how we collect, use,
             disclose, and safeguard your information when you visit our website

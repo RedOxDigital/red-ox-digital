@@ -20,12 +20,12 @@ export function MobileCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-[var(--border-grey)] shadow-lg safe-area-bottom">
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-[var(--bg-cream)] border-t border-[var(--border-color)] shadow-lg safe-area-bottom">
       <div className="flex items-center justify-between px-4 py-3 gap-3">
         {/* Call Button */}
         <a
           href="tel:+61493992661"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--charcoal)] text-white font-semibold py-3 px-4 rounded-lg min-h-[44px] transition-colors hover:bg-[var(--charcoal-light)]"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--text-dark)] text-white font-semibold py-3 px-4 rounded-[var(--radius-sm)] min-h-[44px] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:opacity-90"
           aria-label="Call Red Ox Digital"
         >
           <svg
@@ -48,7 +48,7 @@ export function MobileCTA() {
         {/* Contact Button */}
         <Link
           href="/contact"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--red-ox-red)] text-white font-semibold py-3 px-4 rounded-lg min-h-[44px] transition-colors hover:bg-[var(--red-ox-red-hover)]"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--primary-red)] text-white font-semibold py-3 px-4 rounded-[var(--radius-sm)] min-h-[44px] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
           aria-label="Contact Red Ox Digital"
         >
           <svg

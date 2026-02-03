@@ -60,33 +60,34 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--charcoal)] text-white" aria-labelledby="footer-heading">
+    <footer className="bg-[var(--footer-bg)]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="mx-auto max-w-[var(--container-width)] px-[var(--spacing-md)] py-[var(--spacing-xl)] pb-[var(--spacing-md)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-[var(--spacing-lg)]  mb-[var(--spacing-lg)]">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-[var(--red-ox-red)]">Red Ox</span>
-              <span className="text-2xl font-bold text-white ml-1">Digital</span>
+          <div>
+            <Link href="/" className="inline-block mb-[var(--spacing-sm)]">
+              <h4 className="text-[1.25rem] font-extrabold">
+                Red Ox <span className="text-[var(--primary-red)]">Digital</span>
+              </h4>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-[var(--text-grey)] text-sm leading-relaxed mb-6">
               Your local digital marketing consultant in Dakabin, serving North Brisbane.
               Simple, effective strategies that deliver results.
             </p>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 mt-2.5">
               {socialLinks.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  className="text-[var(--text-dark)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--primary-red)] hover:-translate-y-[3px]"
                   aria-label={item.name}
                 >
                   <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -97,15 +98,15 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            <h5 className="text-[0.95rem] font-semibold text-[var(--text-dark)] mb-[var(--spacing-sm)]">
               Services
-            </h3>
-            <ul className="space-y-3">
+            </h5>
+            <ul className="space-y-2">
               {footerNavigation.services.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-grey)] hover:text-[var(--primary-red)] transition-colors text-[0.9rem]"
                   >
                     {item.name}
                   </Link>
@@ -116,15 +117,15 @@ export function Footer() {
 
           {/* Locations Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            <h5 className="text-[0.95rem] font-semibold text-[var(--text-dark)] mb-[var(--spacing-sm)]">
               Service Areas
-            </h3>
-            <ul className="space-y-3">
+            </h5>
+            <ul className="space-y-2">
               {footerNavigation.locations.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-grey)] hover:text-[var(--primary-red)] transition-colors text-[0.9rem]"
                   >
                     {item.name}
                   </Link>
@@ -133,17 +134,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company Column */}
+          {/* Company & Newsletter Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            <h5 className="text-[0.95rem] font-semibold text-[var(--text-dark)] mb-[var(--spacing-sm)]">
               Company
-            </h3>
-            <ul className="space-y-3">
+            </h5>
+            <ul className="space-y-2">
               {footerNavigation.company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-[var(--text-grey)] hover:text-[var(--primary-red)] transition-colors text-[0.9rem]"
                   >
                     {item.name}
                   </Link>
@@ -154,7 +155,7 @@ export function Footer() {
                   href="https://share.google/DSmj00oU7t0Db7d1g"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-[var(--text-grey)] hover:text-[var(--primary-red)] transition-colors text-[0.9rem]"
                 >
                   View our Google Profile
                 </a>
@@ -163,21 +164,39 @@ export function Footer() {
 
             {/* Phone */}
             <div className="mt-6">
-              <p className="text-sm text-gray-400 mb-1">Call us:</p>
+              <p className="text-sm text-[var(--text-grey)] mb-1">Call us:</p>
               <a
                 href="tel:+61493992661"
-                className="text-white font-semibold hover:text-gray-300 transition-colors"
+                className="text-[var(--text-dark)] font-semibold hover:text-[var(--primary-red)] transition-colors"
               >
                 0493 992 661
               </a>
+            </div>
+
+            {/* Newsletter Form */}
+            <div className="mt-[var(--spacing-sm)]">
+              <p className="text-sm text-[var(--text-grey)] mb-2">Stay updated:</p>
+              <form className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-2.5 py-2.5 border border-[#ccc] rounded-[var(--radius-sm)] bg-transparent text-[var(--text-dark)] text-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus:border-[var(--primary-red)] focus:shadow-[0_0_0_3px_rgba(194,59,34,0.1)] focus:-translate-y-0.5"
+                />
+                <button
+                  type="submit"
+                  className="px-4 bg-[var(--primary-red)] text-white rounded-[var(--radius-sm)] text-[0.85rem] cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] active:-translate-y-[1px] active:shadow-[0_6px_16px_rgba(194,59,34,0.25)]"
+                >
+                  Join
+                </button>
+              </form>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+        <div className="pt-[var(--spacing-sm)] border-t border-[rgba(0,0,0,0.1)]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[0.8rem] text-[var(--text-grey)]">
+            <p>
               &copy; {currentYear} Red Ox Digital. All rights reserved.
             </p>
 
@@ -187,14 +206,14 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-[var(--text-grey)] hover:text-[var(--primary-red)] transition-colors"
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
 
-            <p className="text-gray-500 text-xs">
+            <p className="text-[var(--text-grey)] text-xs">
               Proudly serving North Brisbane from Dakabin
             </p>
           </div>

@@ -33,7 +33,7 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* Content */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-3xl mx-auto prose prose-lg prose-gray">
           <p className="lead text-[var(--medium-grey)] text-lg">
             This Cookie Policy explains how Red Ox Digital uses cookies and

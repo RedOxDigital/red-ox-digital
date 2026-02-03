@@ -25,7 +25,7 @@ export function StickyCTA() {
       className={`
         fixed bottom-0 left-0 right-0 z-50
         hidden lg:block
-        bg-[var(--charcoal)] border-t border-[var(--charcoal-light)]
+        bg-[var(--text-dark)] border-t border-[var(--border-dark)]
         shadow-[0_-4px_20px_rgba(0,0,0,0.15)]
         transform transition-transform duration-300 ease-out
         safe-area-bottom
@@ -35,11 +35,11 @@ export function StickyCTA() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Left: Promotional text */}
-          <div className="text-white">
+          <div className="text-[var(--text-light)]">
             <p className="text-lg font-semibold">
               Ready to grow your business online?
             </p>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-[var(--text-grey)]">
               Get a free consultation with our digital experts today.
             </p>
           </div>
@@ -49,7 +49,7 @@ export function StickyCTA() {
             {/* Call Button */}
             <a
               href="tel:+61493992661"
-              className="inline-flex items-center gap-2 bg-white text-[var(--charcoal)] font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:bg-gray-100 hover:shadow-md"
+              className="inline-flex items-center gap-2 bg-[var(--bg-off-white)] text-[var(--text-dark)] font-semibold py-3 px-6 rounded-[var(--radius-sm)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[var(--bg-cream)] hover:shadow-md hover:-translate-y-[2px]"
               aria-label="Call Red Ox Digital"
             >
               <svg
@@ -72,7 +72,7 @@ export function StickyCTA() {
             {/* Get a Free Quote Button */}
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[var(--red-ox-red)] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:bg-[var(--red-ox-red-hover)] hover:shadow-md"
+              className="inline-flex items-center gap-2 bg-[var(--primary-red)] text-white font-semibold py-3 px-6 rounded-[var(--radius-sm)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
               aria-label="Get a free quote from Red Ox Digital"
             >
               <svg

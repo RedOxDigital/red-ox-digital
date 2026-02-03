@@ -33,7 +33,7 @@ export default function TermsOfServicePage() {
       </section>
 
       {/* Content */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-3xl mx-auto prose prose-lg prose-gray">
           <p className="lead text-[var(--medium-grey)] text-lg">
             Welcome to Red Ox Digital. By accessing our website at

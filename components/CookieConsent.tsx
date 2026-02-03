@@ -104,13 +104,13 @@ export function CookieConsent() {
       />
 
       {/* Cookie Banner */}
-      <div className="relative w-full max-w-lg transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all sm:max-w-xl">
+      <div className="relative w-full max-w-lg transform overflow-hidden rounded-[var(--radius-lg)] bg-[var(--bg-off-white)] shadow-2xl transition-all sm:max-w-xl">
         <div className="p-6">
           <div className="flex items-start gap-4">
             {/* Cookie Icon */}
-            <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--red-ox-red-light)]">
+            <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--primary-red-light)]">
               <svg
-                className="h-6 w-6 text-[var(--red-ox-red)]"
+                className="h-6 w-6 text-[var(--primary-red)]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -128,17 +128,17 @@ export function CookieConsent() {
             <div className="flex-1">
               <h2
                 id="cookie-consent-title"
-                className="text-lg font-semibold text-[var(--charcoal)]"
+                className="text-lg font-semibold text-[var(--text-dark)]"
               >
                 We value your privacy
               </h2>
-              <p className="mt-2 text-sm text-[var(--medium-grey)]">
+              <p className="mt-2 text-sm text-[var(--text-grey)]">
                 We use cookies to enhance your browsing experience, analyse site
                 traffic, and serve personalised content. By clicking
                 &quot;Accept All&quot;, you consent to our use of cookies.{" "}
                 <Link
                   href="/cookies"
-                  className="text-[var(--red-ox-red-text)] hover:underline"
+                  className="text-[var(--primary-red)] hover:underline"
                 >
                   Learn more
                 </Link>
@@ -148,14 +148,14 @@ export function CookieConsent() {
 
           {/* Settings Panel */}
           {showSettings && (
-            <div className="mt-6 space-y-4 border-t border-[var(--border-grey)] pt-6">
+            <div className="mt-6 space-y-4 border-t border-[var(--border-color)] pt-6">
               {/* Essential Cookies */}
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-[var(--charcoal)]">
+                  <p className="font-medium text-[var(--text-dark)]">
                     Essential Cookies
                   </p>
-                  <p className="text-sm text-[var(--medium-grey)]">
+                  <p className="text-sm text-[var(--text-grey)]">
                     Required for the website to function
                   </p>
                 </div>
@@ -167,7 +167,7 @@ export function CookieConsent() {
                     className="sr-only"
                     aria-label="Essential cookies (always enabled)"
                   />
-                  <div className="h-6 w-11 rounded-full bg-[var(--red-ox-red)] opacity-50 cursor-not-allowed">
+                  <div className="h-6 w-11 rounded-full bg-[var(--primary-red)] opacity-50 cursor-not-allowed">
                     <div className="h-5 w-5 translate-x-5 translate-y-0.5 rounded-full bg-white shadow transition" />
                   </div>
                 </div>
@@ -176,10 +176,10 @@ export function CookieConsent() {
               {/* Analytics Cookies */}
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-[var(--charcoal)]">
+                  <p className="font-medium text-[var(--text-dark)]">
                     Analytics Cookies
                   </p>
-                  <p className="text-sm text-[var(--medium-grey)]">
+                  <p className="text-sm text-[var(--text-grey)]">
                     Help us improve our website
                   </p>
                 </div>
@@ -196,8 +196,8 @@ export function CookieConsent() {
                   <div
                     className={`h-6 w-11 rounded-full transition-colors ${
                       consent.analytics
-                        ? "bg-[var(--red-ox-red)]"
-                        : "bg-gray-300"
+                        ? "bg-[var(--primary-red)]"
+                        : "bg-[var(--card-bg)]"
                     }`}
                   >
                     <div
@@ -212,10 +212,10 @@ export function CookieConsent() {
               {/* Marketing Cookies */}
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-[var(--charcoal)]">
+                  <p className="font-medium text-[var(--text-dark)]">
                     Marketing Cookies
                   </p>
-                  <p className="text-sm text-[var(--medium-grey)]">
+                  <p className="text-sm text-[var(--text-grey)]">
                     Used for targeted advertising
                   </p>
                 </div>
@@ -232,8 +232,8 @@ export function CookieConsent() {
                   <div
                     className={`h-6 w-11 rounded-full transition-colors ${
                       consent.marketing
-                        ? "bg-[var(--red-ox-red)]"
-                        : "bg-gray-300"
+                        ? "bg-[var(--primary-red)]"
+                        : "bg-[var(--card-bg)]"
                     }`}
                   >
                     <div
@@ -253,19 +253,19 @@ export function CookieConsent() {
               <>
                 <button
                   onClick={() => setShowSettings(true)}
-                  className="order-3 sm:order-1 px-4 py-2 text-sm font-medium text-[var(--medium-grey)] hover:text-[var(--charcoal)] transition-colors"
+                  className="order-3 sm:order-1 px-4 py-2 text-sm font-medium text-[var(--text-grey)] hover:text-[var(--text-dark)] transition-colors"
                 >
                   Cookie Settings
                 </button>
                 <button
                   onClick={acceptEssential}
-                  className="order-2 px-4 py-2 text-sm font-medium text-[var(--charcoal)] border border-[var(--border-grey)] rounded-lg hover:bg-[var(--light-grey)] transition-colors"
+                  className="order-2 px-4 py-2 text-sm font-medium text-[var(--text-dark)] border border-[var(--border-color)] rounded-[var(--radius-sm)] hover:bg-[var(--bg-cream)] transition-colors"
                 >
                   Essential Only
                 </button>
                 <button
                   onClick={acceptAll}
-                  className="order-1 sm:order-3 px-4 py-2 text-sm font-medium text-white bg-[var(--red-ox-red)] rounded-lg hover:bg-[var(--red-ox-red-hover)] transition-colors"
+                  className="order-1 sm:order-3 px-4 py-2 text-sm font-medium text-white bg-[var(--primary-red)] rounded-[var(--radius-sm)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
                 >
                   Accept All
                 </button>
@@ -274,13 +274,13 @@ export function CookieConsent() {
               <>
                 <button
                   onClick={() => setShowSettings(false)}
-                  className="px-4 py-2 text-sm font-medium text-[var(--medium-grey)] hover:text-[var(--charcoal)] transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-[var(--text-grey)] hover:text-[var(--text-dark)] transition-colors"
                 >
                   Back
                 </button>
                 <button
                   onClick={savePreferences}
-                  className="px-4 py-2 text-sm font-medium text-white bg-[var(--red-ox-red)] rounded-lg hover:bg-[var(--red-ox-red-hover)] transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-white bg-[var(--primary-red)] rounded-[var(--radius-sm)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
                 >
                   Save Preferences
                 </button>

@@ -8,24 +8,25 @@ const IMAGE_MODEL = "imagen-3.0-generate-002";
 
 // Brand colors for consistent image generation
 export const BRAND_COLORS = {
-  primary: "#D92323", // Red Ox Red
-  charcoal: "#222222",
-  lightGrey: "#F4F4F4",
-  offWhite: "#FCFCFC",
+  primary: "#C23B22", // Red Ox Red
+  textDark: "#1A1A1A",
+  cream: "#F5F0E6",
+  offWhite: "#F9F6F0",
+  cardBg: "#EBE5D5",
 };
 
 // Image categories with predefined prompts for consistent branding
 export const IMAGE_PROMPTS = {
   hero: {
-    homepage: `Professional digital marketing agency hero image. Modern office environment with Australian business aesthetic. Clean, bright workspace with computers showing analytics dashboards and marketing metrics. Red accent colors (#D92323) subtly incorporated. Professional, trustworthy, local Brisbane/Queensland feel. High quality, photorealistic, 16:9 aspect ratio.`,
+    homepage: `Professional digital marketing agency hero image. Modern office environment with Australian business aesthetic. Clean, bright workspace with computers showing analytics dashboards and marketing metrics. Red accent colors (#C23B22) subtly incorporated. Professional, trustworthy, local Brisbane/Queensland feel. High quality, photorealistic, 16:9 aspect ratio.`,
   },
   about: {
     mission: `Professional Australian small business owner working with digital marketing consultant. Modern Brisbane office setting. Collaborative meeting scene with laptops and marketing materials. Warm, approachable atmosphere. High quality, photorealistic.`,
     journey: `Australian digital marketing professional at work. Home office or modern coworking space aesthetic. Person working on computer with multiple screens showing websites and analytics. Professional but relatable, small business feel. High quality, photorealistic.`,
-    team: `Professional headshot-style image of Australian digital marketing consultant. Friendly, approachable expression. Clean background with subtle red (#D92323) accent. Modern, professional appearance. High quality, photorealistic portrait.`,
+    team: `Professional headshot-style image of Australian digital marketing consultant. Friendly, approachable expression. Clean background with subtle red (#C23B22) accent. Modern, professional appearance. High quality, photorealistic portrait.`,
   },
   services: {
-    webDesign: `Modern responsive website design showcase. Multiple devices (desktop, tablet, mobile) displaying beautiful websites. Clean, minimalist aesthetic with red (#D92323) accent colors. Australian business websites. High quality, photorealistic render.`,
+    webDesign: `Modern responsive website design showcase. Multiple devices (desktop, tablet, mobile) displaying beautiful websites. Clean, minimalist aesthetic with red (#C23B22) accent colors. Australian business websites. High quality, photorealistic render.`,
     seo: `SEO and search engine optimization concept. Computer screen showing Google search results with top rankings highlighted. Analytics charts showing upward growth trends. Professional office setting. High quality, photorealistic.`,
     paidAds: `Digital advertising and paid media concept. Computer screens showing Facebook Ads Manager and Google Ads dashboards. Charts showing ROI and conversion metrics. Modern marketing office. High quality, photorealistic.`,
     mediaProduction: `Professional video and media production setup. Camera equipment, drone, and editing station. Australian landscape visible through window. Creative studio environment. High quality, photorealistic.`,
@@ -151,5 +152,5 @@ export function getImagePrompt(
  * Adds Red Ox Digital branding elements to any prompt
  */
 export function enhancePromptWithBranding(basePrompt: string): string {
-  return `${basePrompt} Brand colors: Red (#D92323) as accent, charcoal (#222222) for dark elements. Australian business context, professional and trustworthy aesthetic. Brisbane/North Brisbane area feel.`;
+  return `${basePrompt} Brand colors: Red (#C23B22) as accent, dark (#1A1A1A) for text elements. Cream (#F5F0E6) backgrounds. Australian business context, professional and trustworthy aesthetic. Brisbane/North Brisbane area feel.`;
 }

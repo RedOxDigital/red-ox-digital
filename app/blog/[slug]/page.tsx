@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Button, Section } from "@/components/ui";
+import { Button, Section, ScrollReveal } from "@/components/ui";
 
 // Blog posts data with full content
 const blogPostsData: Record<string, BlogPost> = {
@@ -728,65 +728,68 @@ export default async function BlogPostPage({
         </div>
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-[var(--red-ox-red-text)] font-medium mb-6 hover:underline"
-            >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+          <ScrollReveal>
+            <div className="text-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-[var(--red-ox-red-text)] font-medium mb-6 hover:underline"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              Back to Blog
-            </Link>
-            <span className="inline-block px-3 py-1 bg-[var(--red-ox-red)] text-white text-xs font-semibold rounded-full mb-4">
-              {post.category}
-            </span>
-            <h1 className="mb-6">{post.title}</h1>
-            <div className="flex items-center justify-center gap-3 text-[var(--medium-grey)]">
-              <span>{post.date}</span>
-              <span className="w-1 h-1 bg-[var(--medium-grey)] rounded-full" />
-              <span>{post.readTime}</span>
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                Back to Blog
+              </Link>
+              <span className="inline-block px-3 py-1 bg-[var(--primary-red)] text-white text-xs font-semibold rounded-full mb-4">
+                {post.category}
+              </span>
+              <h1 className="mb-6">{post.title}</h1>
+              <div className="flex items-center justify-center gap-3 text-[var(--text-grey)]">
+                <span>{post.date}</span>
+                <span className="w-1 h-1 bg-[var(--text-grey)] rounded-full" />
+                <span>{post.readTime}</span>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Featured Image */}
       <section className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-8">
-        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            sizes="(max-width: 1024px) 100vw, 896px"
-            className="object-cover"
-            priority
-          />
-        </div>
+        <ScrollReveal delay={1}>
+          <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* Content */}
-      <Section background="white" padding="lg">
+      <Section background="cream" padding="lg">
         <article className="max-w-3xl mx-auto prose prose-lg">
           {post.content.map((block, index) => {
             if (block.type === "heading") {
               return (
-                <h2
-                  key={index}
-                  className="text-2xl font-semibold text-[var(--charcoal)] mt-10 mb-4"
-                >
-                  {block.text}
-                </h2>
+                <ScrollReveal key={index}>
+                  <h2 className="text-2xl font-semibold text-[var(--text-dark)] mt-10 mb-4">
+                    {block.text}
+                  </h2>
+                </ScrollReveal>
               );
             }
 
@@ -794,7 +797,7 @@ export default async function BlogPostPage({
               return (
                 <ul
                   key={index}
-                  className="list-disc pl-6 space-y-2 text-[var(--medium-grey)] my-6"
+                  className="list-disc pl-6 space-y-2 text-[var(--text-grey)] my-6"
                 >
                   {block.items?.map((item, itemIndex) => (
                     <li key={itemIndex} className="leading-relaxed">
@@ -808,7 +811,7 @@ export default async function BlogPostPage({
             return (
               <p
                 key={index}
-                className="text-[var(--medium-grey)] leading-relaxed mb-6"
+                className="text-[var(--text-grey)] leading-relaxed mb-6"
               >
                 {block.text}
               </p>
@@ -819,32 +822,34 @@ export default async function BlogPostPage({
 
       {/* CTA Section */}
       <Section background="primary" padding="lg">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-white mb-6">
-            Want Personalised Advice for Your Business?
-          </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Reading is great, but nothing beats a one on one chat about your
-            specific situation. Book a free discovery call and let us talk about
-            your business goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="light" size="lg">
-              Book a Free Discovery Call
-            </Button>
-            <Button
-              href="/services"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
-            >
-              View Our Services
-            </Button>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-white mb-6">
+              Want Personalised Advice for Your Business?
+            </h2>
+            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+              Reading is great, but nothing beats a one on one chat about your
+              specific situation. Book a free discovery call and let us talk about
+              your business goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="light" size="lg">
+                Book a Free Discovery Call
+              </Button>
+              <Button
+                href="/services"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
+              >
+                View Our Services
+              </Button>
+            </div>
+            <p className="text-white/70 text-sm mt-6">
+              Based in Dakabin, serving all of North Brisbane
+            </p>
           </div>
-          <p className="text-white/70 text-sm mt-6">
-            Based in Dakabin, serving all of North Brisbane
-          </p>
-        </div>
+        </ScrollReveal>
       </Section>
     </>
   );

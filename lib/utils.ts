@@ -1,10 +1,11 @@
 // Utility functions
 
 import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-// Combine class names (simple version without tailwind-merge)
+// Combine class names with Tailwind class conflict resolution
 export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs);
+  return twMerge(clsx(inputs));
 }
 
 // Format phone number for display

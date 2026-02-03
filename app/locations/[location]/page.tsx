@@ -2,13 +2,14 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Section, SectionHeader, Grid, Button } from "@/components/ui";
+import { Section, SectionHeader, Button, ScrollReveal, ScrollRevealGroup } from "@/components/ui";
 import {
   getAllLocationSlugs,
   getLocationBySlug,
   type Location,
 } from "@/lib/locations";
 import { generateLocationSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { CaseStudyStats, BenefitCard, ServiceCardEnhanced } from "./LocationClientComponents";
 
 // Generate static paths for all 10 location pages
 export function generateStaticParams() {
@@ -214,6 +215,17 @@ export default async function LocationPage({
   // Check if this is Dakabin (home base) for special messaging
   const isDakabin = location.slug === "dakabin-digital-marketing";
 
+  // Case study metrics for animated counters
+  const industrialMetrics = [
+    { value: 45, suffix: "%", label: "More Quote Requests" },
+    { value: 1, suffix: "", label: "Page 1 Google Rankings" },
+  ];
+
+  const retailMetrics = [
+    { value: 30, suffix: "%", label: "More Foot Traffic" },
+    { value: 48, suffix: "", label: "Star Rating (4.8)" },
+  ];
+
   return (
     <>
       {/* JSON-LD Schema */}
@@ -225,412 +237,471 @@ export default async function LocationPage({
       />
 
       {/* Hero Section */}
-      <Section background="dark" padding="lg">
-        <div className="text-center max-w-4xl mx-auto">
+      <Section background="cream" padding="lg" className="overflow-hidden">
+        <ScrollReveal>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex items-center justify-center gap-2 text-sm text-gray-400">
+            <ol className="flex items-center gap-2 text-sm text-[var(--text-grey)]">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-[var(--primary-red)] transition-colors">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/locations" className="hover:text-white transition-colors">
+                <Link href="/locations" className="hover:text-[var(--primary-red)] transition-colors">
                   Locations
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--red-ox-red)]">{location.name}</li>
+              <li className="text-[var(--primary-red)] font-medium">{location.name}</li>
             </ol>
           </nav>
+        </ScrollReveal>
 
-          {/* H1 */}
-          <h1 className="text-white mb-6">{location.h1}</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Hero Content */}
+          <ScrollReveal>
+            <div className="hero-content">
+              {/* Zone Badge */}
+              <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold uppercase tracking-wider bg-[var(--primary-red)]/10 text-[var(--primary-red)] rounded-full">
+                {location.zone === "industrial" ? "Trade & Industrial Zone" : "Retail & Community Zone"}
+              </span>
 
-          {/* Subheading */}
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-            {isDakabin
-              ? "Proudly based right here in Dakabin, we are your neighbours and your digital marketing partner."
-              : `Just minutes from our Dakabin office, we provide hands on digital marketing support for ${location.name} businesses.`}
-          </p>
+              {/* H1 - Serif styling like design reference */}
+              <h1 className="font-serif text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.1] mb-6 text-[var(--text-dark)]">
+                <span className="block">{location.name}</span>
+                <span className="block text-[var(--primary-red)]">Digital Marketing</span>
+              </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" size="lg">
-              Get a Free Quote
-            </Button>
-            <Button href="/services" variant="outline" size="lg">
-              View Our Services
-            </Button>
-          </div>
+              {/* Subheading */}
+              <p className="text-lg md:text-xl text-[var(--text-grey)] mb-8 leading-relaxed max-w-xl">
+                {isDakabin
+                  ? "Proudly based right here in Dakabin, we are your neighbours and your digital marketing partner. Local expertise, genuine care."
+                  : `Just minutes from our Dakabin office, we provide hands-on digital marketing support for ${location.name} businesses.`}
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button href="/contact" size="lg">
+                  Get a Free Quote
+                </Button>
+                <Button href="/services" variant="outline" size="lg">
+                  View Our Services
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center gap-6 mt-8 pt-8 border-t border-[var(--border-color)]">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[var(--primary-red)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm text-[var(--text-grey)]">No lock-in contracts</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[var(--primary-red)]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm text-[var(--text-grey)]">Local team</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Hero Image */}
+          <ScrollReveal delay={2}>
+            <div className="relative">
+              <div className="relative h-[400px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src={location.zone === "industrial" ? "/images/tradies-background.webp" : "/images/north-lakes-location.webp"}
+                  alt={`Digital marketing services in ${location.name}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+
+              {/* Floating stat card */}
+              <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl shadow-xl border border-[var(--border-color)] hidden md:block">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[var(--primary-red)]/10 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-[var(--primary-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-[var(--text-dark)]">10+</p>
+                    <p className="text-sm text-[var(--text-grey)]">Local areas served</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 
-      {/* Why Location Businesses Choose Us Section */}
-      <Section background="white" padding="lg">
-        <SectionHeader
-          subtitle={location.zone === "industrial" ? "For Trade & Industrial" : "For Local Businesses"}
-          title={`Why ${location.name} Businesses Choose Red Ox Digital`}
-          description={zoneContent.intro}
-          align="center"
-        />
+      {/* Why Location Businesses Choose Us Section - Benefits with Bento Cards */}
+      <Section background="cream" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle={location.zone === "industrial" ? "For Trade & Industrial" : "For Local Businesses"}
+            title={`Why ${location.name} Businesses Choose Red Ox Digital`}
+            description={zoneContent.intro}
+            align="center"
+          />
+        </ScrollReveal>
 
-        <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-[var(--medium-grey)] text-lg leading-relaxed text-center">
-            {zoneContent.context}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-[var(--text-grey)] text-lg leading-relaxed text-center">
+              {zoneContent.context}
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <Grid cols={2} gap="lg">
+        {/* Benefits Grid with Bento-style Cards and Staggered Animation */}
+        <ScrollRevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {zoneContent.benefits.map((benefit, index) => (
-            <div
+            <BenefitCard
               key={index}
-              className="p-6 rounded-xl bg-[var(--light-grey)] border border-[var(--border-grey)]"
-            >
-              <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-[var(--red-ox-red)] text-white">
-                <span className="text-xl font-bold">{index + 1}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[var(--charcoal)]">
-                {benefit.title}
-              </h3>
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
+              index={index}
+              title={benefit.title}
+              description={benefit.description}
+            />
           ))}
-        </Grid>
+        </ScrollRevealGroup>
       </Section>
 
       {/* Zone-Specific Service Links */}
-      <Section background="white" padding="md">
-        <div className="max-w-3xl mx-auto">
-          {location.zone === "industrial" ? (
-            <div className="bg-[var(--light-grey)] p-6 rounded-xl border border-[var(--border-grey)]">
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                Looking for{" "}
-                <Link href="/services/web-design" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
-                  Industrial Web Design
-                </Link>
-                ? We specialise in websites for manufacturing and trade businesses. Need more leads? Our{" "}
-                <Link href="/services/seo" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
-                  SEO services
-                </Link>{" "}
-                help you rank for B2B searches.
-              </p>
-            </div>
-          ) : (
-            <div className="bg-[var(--light-grey)] p-6 rounded-xl border border-[var(--border-grey)]">
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                Looking for{" "}
-                <Link href="/services/web-design" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
-                  Web Design
-                </Link>{" "}
-                that converts? We build sites that turn visitors into customers. Our{" "}
-                <Link href="/services/seo/local-seo" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
-                  Local SEO
-                </Link>{" "}
-                helps you dominate Google Maps.
-              </p>
-            </div>
-          )}
-        </div>
-      </Section>
-
-      {/* Services Available Section */}
-      <Section background="light" padding="lg">
-        <SectionHeader
-          subtitle="What We Offer"
-          title={`Digital Marketing Services in ${location.name}`}
-          description={`Our team specialises in these services for ${location.name} businesses. Each solution is tailored to your specific industry and goals.`}
-          align="center"
-        />
-
-        <Grid cols={4} gap="md">
-          {location.focusServices.map((service, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl bg-white border border-[var(--border-grey)] hover:border-[var(--red-ox-red)] hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-xl bg-[var(--red-ox-red-light)] text-[var(--red-ox-red)]">
-                {getServiceIcon(service)}
+      <Section background="cream" padding="md">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto">
+            {location.zone === "industrial" ? (
+              <div className="bg-[var(--card-bg)] p-6 rounded-xl border border-[var(--border-color)]">
+                <p className="text-[var(--text-grey)] leading-relaxed">
+                  Looking for{" "}
+                  <Link href="/services/web-design" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
+                    Industrial Web Design
+                  </Link>
+                  ? We specialise in websites for manufacturing and trade businesses. Need more leads? Our{" "}
+                  <Link href="/services/seo" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
+                    SEO services
+                  </Link>{" "}
+                  help you rank for B2B searches.
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-[var(--charcoal)]">
-                {service}
-              </h3>
-            </div>
-          ))}
-        </Grid>
-
-        <div className="text-center mt-12">
-          <Button href="/services" variant="secondary" size="lg">
-            Explore All Services
-          </Button>
-        </div>
+            ) : (
+              <div className="bg-[var(--card-bg)] p-6 rounded-xl border border-[var(--border-color)]">
+                <p className="text-[var(--text-grey)] leading-relaxed">
+                  Looking for{" "}
+                  <Link href="/services/web-design" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
+                    Web Design
+                  </Link>{" "}
+                  that converts? We build sites that turn visitors into customers. Our{" "}
+                  <Link href="/services/seo/local-seo" className="text-[var(--red-ox-red-text)] hover:underline font-semibold">
+                    Local SEO
+                  </Link>{" "}
+                  helps you dominate Google Maps.
+                </p>
+              </div>
+            )}
+          </div>
+        </ScrollReveal>
       </Section>
 
-      {/* Project Spotlight Section */}
-      <Section background="white" padding="lg">
-        <SectionHeader
-          subtitle="Our Work"
-          title={`Project Spotlight: ${location.name}`}
-          description={`See how we have helped ${location.name} businesses grow their online presence and attract more customers.`}
-          align="center"
-        />
+      {/* Services Available Section - Enhanced Cards */}
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="What We Offer"
+            title={`Digital Marketing Services in ${location.name}`}
+            description={`Our team specialises in these services for ${location.name} businesses. Each solution is tailored to your specific industry and goals.`}
+            align="center"
+          />
+        </ScrollReveal>
+
+        {/* Services Grid with Bento-style Cards and Staggered Animation */}
+        <ScrollRevealGroup className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {location.focusServices.map((service, index) => (
+            <ServiceCardEnhanced
+              key={index}
+              service={service}
+              icon={getServiceIcon(service)}
+            />
+          ))}
+        </ScrollRevealGroup>
+
+        <ScrollReveal>
+          <div className="text-center mt-12">
+            <Button href="/services" variant="secondary" size="lg">
+              Explore All Services
+            </Button>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      {/* Project Spotlight Section - Case Study with Animated Counters */}
+      <Section background="cream" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="Our Work"
+            title={`Project Spotlight: ${location.name}`}
+            description={`See how we have helped ${location.name} businesses grow their online presence and attract more customers.`}
+            align="center"
+          />
+        </ScrollReveal>
 
         {/* Case Studies - Different templates for Industrial vs Retail zones */}
-        {location.zone === "industrial" ? (
-          /* Industrial Zone Case Study Template */
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--light-grey)] rounded-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Case Study Image */}
-                <div className="relative min-h-[300px]">
-                  <Image
-                    src="/images/tradies-background.webp"
-                    alt={`Manufacturing client success story in ${location.name}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-
-                {/* Case Study Content */}
-                <div className="p-8">
-                  <p className="text-[var(--red-ox-red)] font-semibold text-sm uppercase tracking-wide mb-2">
-                    Trade Business Success
-                  </p>
-                  <h3 className="text-2xl font-bold text-[var(--charcoal)] mb-4">
-                    Local Manufacturing Company Grows B2B Leads
-                  </h3>
-
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <p className="font-semibold text-[var(--charcoal)] mb-1">The Challenge</p>
-                      <p className="text-[var(--medium-grey)] text-sm leading-relaxed">
-                        A {location.name} manufacturing business was struggling to be found by B2B customers. Their old website did not show up in Google searches, and they relied only on word of mouth for new work.
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold text-[var(--charcoal)] mb-1">Our Solution</p>
-                      <p className="text-[var(--medium-grey)] text-sm leading-relaxed">
-                        We built a new industrial web design with clear service pages and strong calls to action. Then we added local SEO to help them rank for trade searches in the {location.landmarks[0]} area.
-                      </p>
-                    </div>
+        <ScrollReveal>
+          {location.zone === "industrial" ? (
+            /* Industrial Zone Case Study Template */
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-[var(--card-bg)] rounded-xl overflow-hidden border border-[var(--border-color)] shadow-lg">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Case Study Image */}
+                  <div className="relative min-h-[300px]">
+                    <Image
+                      src="/images/tradies-background.webp"
+                      alt={`Manufacturing client success story in ${location.name}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
 
-                  {/* Results */}
-                  <div className="bg-white rounded-lg p-4 border border-[var(--border-grey)]">
-                    <p className="font-semibold text-[var(--charcoal)] mb-3">The Results</p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-[var(--red-ox-red)]">45%</p>
-                        <p className="text-xs text-[var(--medium-grey)]">More Quote Requests</p>
+                  {/* Case Study Content */}
+                  <div className="p-8">
+                    <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-2">
+                      Trade Business Success
+                    </p>
+                    <h3 className="text-2xl font-bold text-[var(--text-dark)] mb-4">
+                      Local Manufacturing Company Grows B2B Leads
+                    </h3>
+
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <p className="font-semibold text-[var(--text-dark)] mb-1">The Challenge</p>
+                        <p className="text-[var(--text-grey)] text-sm leading-relaxed">
+                          A {location.name} manufacturing business was struggling to be found by B2B customers. Their old website did not show up in Google searches, and they relied only on word of mouth for new work.
+                        </p>
                       </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-[var(--red-ox-red)]">Page 1</p>
-                        <p className="text-xs text-[var(--medium-grey)]">Google Rankings</p>
+
+                      <div>
+                        <p className="font-semibold text-[var(--text-dark)] mb-1">Our Solution</p>
+                        <p className="text-[var(--text-grey)] text-sm leading-relaxed">
+                          We built a new industrial web design with clear service pages and strong calls to action. Then we added local SEO to help them rank for trade searches in the {location.landmarks[0]} area.
+                        </p>
                       </div>
+                    </div>
+
+                    {/* Results with Animated Counters */}
+                    <div className="bg-white rounded-lg p-4 border border-[var(--border-color)]">
+                      <p className="font-semibold text-[var(--text-dark)] mb-3">The Results</p>
+                      <CaseStudyStats metrics={industrialMetrics} />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ) : (
-          /* Retail Zone Case Study Template */
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--light-grey)] rounded-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                {/* Case Study Image */}
-                <div className="relative min-h-[300px]">
-                  <Image
-                    src="/images/north-lakes-location.webp"
-                    alt={`Local retail client success story in ${location.name}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-
-                {/* Case Study Content */}
-                <div className="p-8">
-                  <p className="text-[var(--red-ox-red)] font-semibold text-sm uppercase tracking-wide mb-2">
-                    Local Business Win
-                  </p>
-                  <h3 className="text-2xl font-bold text-[var(--charcoal)] mb-4">
-                    Cafe Stands Out Against Big Chain Competition
-                  </h3>
-
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <p className="font-semibold text-[var(--charcoal)] mb-1">The Challenge</p>
-                      <p className="text-[var(--medium-grey)] text-sm leading-relaxed">
-                        A {location.name} cafe was losing customers to chain stores near {location.landmarks[0]}. They needed a way to reach local families and workers who wanted something better than a franchise coffee.
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold text-[var(--charcoal)] mb-1">Our Solution</p>
-                      <p className="text-[var(--medium-grey)] text-sm leading-relaxed">
-                        We optimised their Google Maps listing and ran targeted local ads to reach people searching for cafes in {location.name}. We also helped them collect and respond to customer reviews.
-                      </p>
-                    </div>
+          ) : (
+            /* Retail Zone Case Study Template */
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-[var(--card-bg)] rounded-xl overflow-hidden border border-[var(--border-color)] shadow-lg">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Case Study Image */}
+                  <div className="relative min-h-[300px]">
+                    <Image
+                      src="/images/north-lakes-location.webp"
+                      alt={`Local retail client success story in ${location.name}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
 
-                  {/* Results */}
-                  <div className="bg-white rounded-lg p-4 border border-[var(--border-grey)]">
-                    <p className="font-semibold text-[var(--charcoal)] mb-3">The Results</p>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-[var(--red-ox-red)]">30%</p>
-                        <p className="text-xs text-[var(--medium-grey)]">More Foot Traffic</p>
+                  {/* Case Study Content */}
+                  <div className="p-8">
+                    <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-2">
+                      Local Business Win
+                    </p>
+                    <h3 className="text-2xl font-bold text-[var(--text-dark)] mb-4">
+                      Cafe Stands Out Against Big Chain Competition
+                    </h3>
+
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <p className="font-semibold text-[var(--text-dark)] mb-1">The Challenge</p>
+                        <p className="text-[var(--text-grey)] text-sm leading-relaxed">
+                          A {location.name} cafe was losing customers to chain stores near {location.landmarks[0]}. They needed a way to reach local families and workers who wanted something better than a franchise coffee.
+                        </p>
                       </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-bold text-[var(--red-ox-red)]">4.8</p>
-                        <p className="text-xs text-[var(--medium-grey)]">Star Rating</p>
+
+                      <div>
+                        <p className="font-semibold text-[var(--text-dark)] mb-1">Our Solution</p>
+                        <p className="text-[var(--text-grey)] text-sm leading-relaxed">
+                          We optimised their Google Maps listing and ran targeted local ads to reach people searching for cafes in {location.name}. We also helped them collect and respond to customer reviews.
+                        </p>
                       </div>
+                    </div>
+
+                    {/* Results with Animated Counters */}
+                    <div className="bg-white rounded-lg p-4 border border-[var(--border-color)]">
+                      <p className="font-semibold text-[var(--text-dark)] mb-3">The Results</p>
+                      <CaseStudyStats metrics={retailMetrics} />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </ScrollReveal>
 
-        <div className="text-center mt-8">
-          <p className="text-[var(--medium-grey)]">
-            Want to be our next success story?{" "}
-            <Link href="/contact" className="text-[var(--red-ox-red-text)] font-semibold hover:underline">
-              Let&apos;s chat about your project
-            </Link>
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mt-8">
+            <p className="text-[var(--text-grey)]">
+              Want to be our next success story?{" "}
+              <Link href="/contact" className="text-[var(--red-ox-red-text)] font-semibold hover:underline">
+                Let&apos;s chat about your project
+              </Link>
+            </p>
+          </div>
+        </ScrollReveal>
       </Section>
 
       {/* Local Area Context Section */}
-      <Section background="light" padding="lg">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-[var(--red-ox-red)] font-semibold text-sm uppercase tracking-wide mb-2">
-                Your Local Area
-              </p>
-              <h2 className="mb-6">
-                {location.zone === "industrial"
-                  ? `Working With ${location.name}'s Industrial Community`
-                  : `Part of the ${location.name} Community`}
-              </h2>
-              <p className="text-[var(--medium-grey)] text-lg leading-relaxed mb-6">
-                {location.zone === "industrial"
-                  ? `${location.name} is a hub for industrial activity in North Brisbane. The area around ${location.landmarks[0]} is home to manufacturers, distributors, and trade businesses that keep the region running.`
-                  : `${location.name} is a growing community in North Brisbane, close to ${location.landmarks.join(", ")}. Local businesses here serve families, professionals, and the wider community.`}
-              </p>
-              <p className="text-[var(--medium-grey)] leading-relaxed mb-6">
-                {isDakabin
-                  ? "As Dakabin locals ourselves, we understand what it takes to succeed in this community. We see the businesses we work with every day, and that keeps us accountable to delivering real results."
-                  : `Being based in nearby Dakabin means we can meet face to face, understand your local market, and provide the hands on support that ${location.name} businesses deserve.`}
-              </p>
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-2">
+                  Your Local Area
+                </p>
+                <h2 className="mb-6">
+                  {location.zone === "industrial"
+                    ? `Working With ${location.name}'s Industrial Community`
+                    : `Part of the ${location.name} Community`}
+                </h2>
+                <p className="text-[var(--text-grey)] text-lg leading-relaxed mb-6">
+                  {location.zone === "industrial"
+                    ? `${location.name} is a hub for industrial activity in North Brisbane. The area around ${location.landmarks[0]} is home to manufacturers, distributors, and trade businesses that keep the region running.`
+                    : `${location.name} is a growing community in North Brisbane, close to ${location.landmarks.join(", ")}. Local businesses here serve families, professionals, and the wider community.`}
+                </p>
+                <p className="text-[var(--text-grey)] leading-relaxed mb-6">
+                  {isDakabin
+                    ? "As Dakabin locals ourselves, we understand what it takes to succeed in this community. We see the businesses we work with every day, and that keeps us accountable to delivering real results."
+                    : `Being based in nearby Dakabin means we can meet face to face, understand your local market, and provide the hands on support that ${location.name} businesses deserve.`}
+                </p>
 
-              {/* Local landmarks tags */}
-              <div className="flex flex-wrap gap-2">
-                <span className="text-sm text-[var(--medium-grey)] mr-2">Nearby:</span>
-                {location.landmarks.map((landmark, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-white rounded-full text-sm text-[var(--charcoal)] border border-[var(--border-grey)]"
-                  >
-                    {landmark}
-                  </span>
-                ))}
+                {/* Local landmarks tags */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-sm text-[var(--text-grey)] mr-2">Nearby:</span>
+                  {location.landmarks.map((landmark, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-white rounded-full text-sm text-[var(--text-dark)] border border-[var(--border-color)]"
+                    >
+                      {landmark}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Google Maps Embed */}
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d143062.763293835!2d152.96393270000002!3d-27.25019175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b0f8611d8f8719d%3A0x42dc25c8ec92eaf1!2sRed%20Ox%20Digital%20Marketing!5e1!3m2!1sen!2sau!4v1768892955452!5m2!1sen!2sau"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Red Ox Digital location serving ${location.name}`}
+                />
               </div>
             </div>
-
-            {/* Google Maps Embed */}
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d143062.763293835!2d152.96393270000002!3d-27.25019175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b0f8611d8f8719d%3A0x42dc25c8ec92eaf1!2sRed%20Ox%20Digital%20Marketing!5e1!3m2!1sen!2sau!4v1768892955452!5m2!1sen!2sau"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`Red Ox Digital location serving ${location.name}`}
-              />
-            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Section>
 
       {/* CTA Section */}
       <Section background="primary" padding="lg">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-white mb-6">{zoneContent.ctaText}</h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            {isDakabin
-              ? "As your neighbours, we are here to help your business thrive. Let us show you what local expertise and genuine care can do for your digital presence."
-              : `Get in touch today for a free consultation. We will discuss your goals, analyse your current digital presence, and show you exactly how we can help your ${location.name} business grow.`}
-          </p>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-[var(--text-light)] mb-6">{zoneContent.ctaText}</h2>
+            <p className="text-xl text-[var(--text-light)]/90 mb-8 leading-relaxed">
+              {isDakabin
+                ? "As your neighbours, we are here to help your business thrive. Let us show you what local expertise and genuine care can do for your digital presence."
+                : `Get in touch today for a free consultation. We will discuss your goals, analyse your current digital presence, and show you exactly how we can help your ${location.name} business grow.`}
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="/contact"
-              variant="light"
-              size="lg"
-            >
-              Book a Free Consultation
-            </Button>
-            <a
-              href="tel:+61493992661"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white/10 text-white border-2 border-white hover:bg-white hover:text-[var(--red-ox-red-text)] transition-all duration-200 min-h-[52px]"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call Us Now
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/contact"
+                variant="light"
+                size="lg"
+              >
+                Book a Free Consultation
+              </Button>
+              <a
+                href="tel:+61493992661"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white/10 text-[var(--text-light)] border-2 border-white hover:bg-white hover:text-[var(--red-ox-red-text)] transition-all duration-200 min-h-[52px]"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call Us Now
+              </a>
+            </div>
+
+            <p className="text-[var(--text-light)]/70 text-sm mt-8">
+              No obligation. No lock-in contracts. Just a straightforward chat about your goals.
+            </p>
           </div>
-
-          <p className="text-white/70 text-sm mt-8">
-            No obligation. No lock-in contracts. Just a straightforward chat about your goals.
-          </p>
-        </div>
+        </ScrollReveal>
       </Section>
 
       {/* Related Locations (Internal Linking) */}
-      <Section background="white" padding="md">
-        <div className="text-center mb-8">
-          <h3 className="text-lg font-semibold text-[var(--charcoal)]">
-            Also Serving Nearby Areas
-          </h3>
-        </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          {getAllLocationSlugs()
-            .filter((s) => s !== slug)
-            .slice(0, 5)
-            .map((locationSlug) => {
-              const loc = getLocationBySlug(locationSlug);
-              if (!loc) return null;
-              return (
-                <Link
-                  key={locationSlug}
-                  href={`/locations/${locationSlug}`}
-                  className="px-4 py-2 bg-[var(--light-grey)] rounded-lg text-[var(--charcoal)] hover:bg-[var(--red-ox-red)] hover:text-white transition-colors text-sm font-medium"
-                >
-                  {loc.name}
-                </Link>
-              );
-            })}
-          <Link
-            href="/locations"
-            className="px-4 py-2 bg-[var(--charcoal)] rounded-lg text-white hover:bg-[var(--red-ox-red)] transition-colors text-sm font-medium"
-          >
-            View All Locations
-          </Link>
-        </div>
+      <Section background="cream" padding="md">
+        <ScrollReveal>
+          <div className="text-center mb-8">
+            <h3 className="text-lg font-semibold text-[var(--text-dark)]">
+              Also Serving Nearby Areas
+            </h3>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal>
+          <div className="flex flex-wrap justify-center gap-3">
+            {getAllLocationSlugs()
+              .filter((s) => s !== slug)
+              .slice(0, 5)
+              .map((locationSlug) => {
+                const loc = getLocationBySlug(locationSlug);
+                if (!loc) return null;
+                return (
+                  <Link
+                    key={locationSlug}
+                    href={`/locations/${locationSlug}`}
+                    className="px-4 py-2 bg-[var(--card-bg)] rounded-lg text-[var(--text-dark)] hover:bg-[var(--primary-red)] hover:text-[var(--text-light)] transition-colors text-sm font-medium"
+                  >
+                    {loc.name}
+                  </Link>
+                );
+              })}
+            <Link
+              href="/locations"
+              className="px-4 py-2 bg-[var(--text-dark)] rounded-lg text-[var(--text-light)] hover:bg-[var(--primary-red)] transition-colors text-sm font-medium"
+            >
+              View All Locations
+            </Link>
+          </div>
+        </ScrollReveal>
       </Section>
     </>
   );

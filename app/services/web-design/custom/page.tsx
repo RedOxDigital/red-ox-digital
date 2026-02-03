@@ -199,7 +199,7 @@ export default function CustomWebDesignPage() {
       />
 
       {/* Breadcrumb navigation */}
-      <Section background="white" padding="none" className="py-4 border-b border-[var(--border-grey)]">
+      <Section background="offWhite" padding="none" className="py-4 border-b border-[var(--border-grey)]">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-2 text-sm text-[var(--medium-grey)]">
             <li>
@@ -220,7 +220,7 @@ export default function CustomWebDesignPage() {
       </Section>
 
       {/* Hero Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="mb-6">Custom Web Design Solutions</h1>
           <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -243,7 +243,7 @@ export default function CustomWebDesignPage() {
       </Section>
 
       {/* Benefits Section */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Why Go Custom"
           title="A Website Built Just for You"
@@ -290,7 +290,7 @@ export default function CustomWebDesignPage() {
       </Section>
 
       {/* Features vs Benefits Section */}
-      <Section id="what-you-get" background="light" padding="lg">
+      <Section id="what-you-get" background="offWhite" padding="lg">
         <SectionHeader
           subtitle="What You Get"
           title="Custom Features for Custom Results"
@@ -320,7 +320,7 @@ export default function CustomWebDesignPage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Questions Answered"
           title="Custom Web Design FAQs"
@@ -358,7 +358,7 @@ export default function CustomWebDesignPage() {
       </Section>
 
       {/* Related Services */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Other Web Design Options"
           title="Explore All Our Web Design Services"

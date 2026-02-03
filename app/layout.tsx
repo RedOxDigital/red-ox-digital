@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Open_Sans } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import { Header, Footer, MobileCTA } from "@/components/layout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 // Google Analytics Measurement ID - Replace with your actual ID
@@ -17,11 +18,11 @@ const playfair = Playfair_Display({
 });
 
 // Sans-serif font for body (clean, modern)
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
 });
 
 // Base metadata for SEO
@@ -101,7 +102,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#D92323",
+  themeColor: "#C23B22",
 };
 
 export default function RootLayout({
@@ -110,11 +111,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-AU" className={`${playfair.variable} ${openSans.variable}`}>
+    <html lang="en-AU" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         {/* Preconnect to Google Fonts for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Google Material Symbols for icons */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -150,6 +157,9 @@ export default function RootLayout({
 
         {/* Cookie Consent Banner */}
         <CookieConsent />
+
+        {/* Toast Notifications */}
+        <Toaster position="top-right" />
       </body>
     </html>
   );

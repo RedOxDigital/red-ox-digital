@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button, Section, SectionHeader, Grid, ServiceCard, TestimonialCard } from "@/components/ui";
+import { Button, Section, SectionHeader, ScrollReveal } from "@/components/ui";
 import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import {
+  ProcessSection,
+  FAQSection,
+  TestimonialCarouselSection,
+  BenefitsSection,
+  ChildServicesSection,
+  FeaturesBenefitsTable,
+} from "./PaidAdsClient";
 
 export const metadata: Metadata = {
   title: "Google Ads Management & PPC Services | Red Ox Digital",
@@ -42,6 +50,12 @@ const childServices = [
         />
       </svg>
     ),
+    details: [
+      "Custom audience targeting",
+      "Lookalike audience creation",
+      "Retargeting campaigns",
+      "Ad creative development",
+    ],
   },
 ];
 
@@ -196,6 +210,22 @@ const faqs = [
   },
 ];
 
+// Testimonials for carousel
+const testimonials = [
+  {
+    quote: "When I first tried Google Ads, I wasted so much money. I was only getting random leads. When I met Ryan at Red Ox Digital, he explained SEO so simply. Now we spend less money and actually generate strong leads that are converting to business.",
+    author: "Stephen Adnams",
+    role: "Owner",
+    company: "SEQ Medical",
+  },
+  {
+    quote: "Ryan was a great help to our business and we have seen the results. Highly recommend. It was fun working with him on the photoshoot and creating the Facebook ads.",
+    author: "Reegan Chapman",
+    role: "Business Owner",
+    company: "Google Review",
+  },
+];
+
 // Schema data
 const serviceSchema = generateServiceSchema({
   name: "Google Ads Management & PPC Services",
@@ -224,367 +254,291 @@ export default function PaidAdsPage() {
       />
 
       {/* Breadcrumb navigation */}
-      <Section background="white" padding="none" className="py-4 border-b border-[var(--border-grey)]">
+      <Section background="cream" padding="none" className="py-4 border-b border-[var(--border-color)]">
         <nav aria-label="Breadcrumb">
-          <ol className="flex items-center gap-2 text-sm text-[var(--medium-grey)]">
+          <ol className="flex items-center gap-2 text-sm text-[var(--text-grey)]">
             <li>
               <Link href="/" className="hover:text-[var(--red-ox-red-text)]">
                 Home
               </Link>
             </li>
             <li>/</li>
-            <li className="text-[var(--charcoal)]">Paid Ads</li>
+            <li className="text-[var(--text-dark)]">Paid Ads</li>
           </ol>
         </nav>
       </Section>
 
       {/* Hero Section */}
-      <Section background="white" padding="lg">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="mb-6">Google Ads Management & PPC Services</h1>
-          <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
-            Stop wasting money on clicks that go nowhere. Our <strong>Google Ads management</strong>{" "}
-            focuses on what actually matters. Getting you leads that turn into paying customers.
-          </p>
-          <p className="text-lg text-[var(--medium-grey)] mb-8 leading-relaxed max-w-3xl mx-auto">
-            We do not chase impressions or clicks. We build campaigns that bring in real enquiries
-            for your business. Every dollar is tracked, optimised, and working to grow your bottom
-            line.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" size="lg">
-              Get a Free Ads Audit
-            </Button>
-            <Button href="#how-it-works" variant="outline" size="lg">
-              See How It Works
-            </Button>
+      <Section background="cream" padding="lg">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="mb-6">Google Ads Management & PPC Services</h1>
+            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+              Stop wasting money on clicks that go nowhere. Our <strong>Google Ads management</strong>{" "}
+              focuses on what actually matters. Getting you leads that turn into paying customers.
+            </p>
+            <p className="text-lg text-[var(--text-grey)] mb-8 leading-relaxed max-w-3xl mx-auto">
+              We do not chase impressions or clicks. We build campaigns that bring in real enquiries
+              for your business. Every dollar is tracked, optimised, and working to grow your bottom
+              line.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" size="lg">
+                Get a Free Ads Audit
+              </Button>
+              <Button href="#how-it-works" variant="outline" size="lg">
+                See How It Works
+              </Button>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Section>
 
       {/* Google Ads Specialist Section */}
-      <Section background="light" padding="lg">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="mb-4">Google Ads Specialist</h2>
-              <p className="text-[var(--medium-grey)] mb-4 leading-relaxed">
-                Managing Google Ads well takes more than setting up a few keywords. It takes
-                someone who understands the platform inside out and knows how to get results without
-                burning through your budget.
-              </p>
-              <p className="text-[var(--medium-grey)] mb-4 leading-relaxed">
-                As a <strong>Google Ads specialist</strong>, I have managed campaigns for businesses
-                across North Brisbane. I know what works, what wastes money, and how to turn ad
-                spend into actual customers walking through your door.
-              </p>
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                No jargon, no confusing reports. Just clear communication about what is working and
-                what we are doing to improve it.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-[var(--red-ox-red-light)]">
-                  <svg
-                    className="w-10 h-10 text-[var(--red-ox-red)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="mb-4">Google Ads Specialist</h2>
+                <p className="text-[var(--text-grey)] mb-4 leading-relaxed">
+                  Managing Google Ads well takes more than setting up a few keywords. It takes
+                  someone who understands the platform inside out and knows how to get results without
+                  burning through your budget.
+                </p>
+                <p className="text-[var(--text-grey)] mb-4 leading-relaxed">
+                  As a <strong>Google Ads specialist</strong>, I have managed campaigns for businesses
+                  across North Brisbane. I know what works, what wastes money, and how to turn ad
+                  spend into actual customers walking through your door.
+                </p>
+                <p className="text-[var(--text-grey)] leading-relaxed">
+                  No jargon, no confusing reports. Just clear communication about what is working and
+                  what we are doing to improve it.
+                </p>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <div className="text-center">
+                  <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full bg-[var(--red-ox-red-light)]">
+                    <svg
+                      className="w-10 h-10 text-[var(--primary-red)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-[var(--text-dark)]">
+                    What You Get
+                  </h3>
+                  <ul className="text-left text-[var(--text-grey)] space-y-3">
+                    <li className="flex items-start">
+                      <span className="text-[var(--primary-red)] mr-2">&#10003;</span>
+                      Campaign setup and management
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[var(--primary-red)] mr-2">&#10003;</span>
+                      Keyword research and targeting
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[var(--primary-red)] mr-2">&#10003;</span>
+                      Ad copy that converts
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[var(--primary-red)] mr-2">&#10003;</span>
+                      Monthly optimisation and reporting
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-[var(--charcoal)]">
-                  What You Get
-                </h3>
-                <ul className="text-left text-[var(--medium-grey)] space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[var(--red-ox-red)] mr-2">&#10003;</span>
-                    Campaign setup and management
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[var(--red-ox-red)] mr-2">&#10003;</span>
-                    Keyword research and targeting
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[var(--red-ox-red)] mr-2">&#10003;</span>
-                    Ad copy that converts
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[var(--red-ox-red)] mr-2">&#10003;</span>
-                    Monthly optimisation and reporting
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Section>
 
       {/* Google Ads Freelancer Section */}
-      <Section background="white" padding="lg">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-[var(--charcoal)] p-8 rounded-xl text-white">
-              <h3 className="text-xl font-semibold mb-4">Why Work with a Freelancer?</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-[var(--red-ox-red)] mr-3 text-xl">&#10003;</span>
-                  <div>
-                    <strong>Direct Communication</strong>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Talk directly to the person managing your ads. No account managers or juniors.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[var(--red-ox-red)] mr-3 text-xl">&#10003;</span>
-                  <div>
-                    <strong>Lower Overhead</strong>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Agency prices without the agency overhead. Your budget goes further.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[var(--red-ox-red)] mr-3 text-xl">&#10003;</span>
-                  <div>
-                    <strong>Flexible Service</strong>
-                    <p className="text-gray-400 text-sm mt-1">
-                      Scale up or down as needed. No long contracts or minimum terms.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="mb-4">Google Ads Freelancer</h2>
-              <p className="text-[var(--medium-grey)] mb-4 leading-relaxed">
-                Choosing a <strong>Google Ads freelancer</strong> over a big agency means you get
-                personal attention and better value. No being passed between account managers or
-                getting lost in a sea of clients.
-              </p>
-              <p className="text-[var(--medium-grey)] mb-4 leading-relaxed">
-                When you work with me, you work with the person actually running your campaigns. I
-                learn your business, understand your customers, and treat your budget like it was my
-                own.
-              </p>
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                This direct relationship means faster responses, better strategy, and campaigns that
-                actually reflect what makes your business unique.
-              </p>
+      <Section background="cream" padding="lg">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1 bg-[var(--text-dark)] p-8 rounded-xl text-[var(--text-light)]">
+                <h3 className="text-xl font-semibold mb-4">Why Work with a Freelancer?</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="text-[var(--primary-red)] mr-3 text-xl">&#10003;</span>
+                    <div>
+                      <strong>Direct Communication</strong>
+                      <p className="text-[var(--text-grey)] text-sm mt-1">
+                        Talk directly to the person managing your ads. No account managers or juniors.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[var(--primary-red)] mr-3 text-xl">&#10003;</span>
+                    <div>
+                      <strong>Lower Overhead</strong>
+                      <p className="text-[var(--text-grey)] text-sm mt-1">
+                        Agency prices without the agency overhead. Your budget goes further.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[var(--primary-red)] mr-3 text-xl">&#10003;</span>
+                    <div>
+                      <strong>Flexible Service</strong>
+                      <p className="text-[var(--text-grey)] text-sm mt-1">
+                        Scale up or down as needed. No long contracts or minimum terms.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-1 md:order-2">
+                <h2 className="mb-4">Google Ads Freelancer</h2>
+                <p className="text-[var(--text-grey)] mb-4 leading-relaxed">
+                  Choosing a <strong>Google Ads freelancer</strong> over a big agency means you get
+                  personal attention and better value. No being passed between account managers or
+                  getting lost in a sea of clients.
+                </p>
+                <p className="text-[var(--text-grey)] mb-4 leading-relaxed">
+                  When you work with me, you work with the person actually running your campaigns. I
+                  learn your business, understand your customers, and treat your budget like it was my
+                  own.
+                </p>
+                <p className="text-[var(--text-grey)] leading-relaxed">
+                  This direct relationship means faster responses, better strategy, and campaigns that
+                  actually reflect what makes your business unique.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </Section>
 
       {/* Benefits Section */}
-      <Section background="light" padding="lg">
-        <SectionHeader
-          subtitle="Our Approach"
-          title="PPC Management That Delivers"
-          description="We focus on what matters. Getting you customers, not just clicks."
-        />
-        <Grid cols={3} gap="lg">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-xl bg-[var(--red-ox-red-light)] text-[var(--red-ox-red)]">
-                {benefit.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[var(--charcoal)]">
-                {benefit.title}
-              </h3>
-              <p className="text-[var(--medium-grey)] leading-relaxed">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
-        </Grid>
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="Our Approach"
+            title="PPC Management That Delivers"
+            description="We focus on what matters. Getting you customers, not just clicks."
+          />
+        </ScrollReveal>
+        <BenefitsSection benefits={benefits} />
       </Section>
 
       {/* Child Services Section */}
-      <Section id="services" background="white" padding="lg">
-        <SectionHeader
-          subtitle="Other Paid Advertising"
-          title="Reach Customers on More Platforms"
-          description="Google Ads is just one piece of the puzzle. We can help you advertise across multiple channels."
-        />
-        <Grid cols={3} gap="md">
-          {childServices.map((service) => (
-            <ServiceCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              href={service.href}
-            />
-          ))}
-        </Grid>
+      <Section id="services" background="cream" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="Other Paid Advertising"
+            title="Reach Customers on More Platforms"
+            description="Google Ads is just one piece of the puzzle. We can help you advertise across multiple channels."
+          />
+        </ScrollReveal>
+        <ChildServicesSection services={childServices} />
       </Section>
 
       {/* Process Section */}
       <Section id="how-it-works" background="dark" padding="lg">
-        <SectionHeader
-          subtitle="How It Works"
-          title="Our 3-Step PPC Process"
-          description="A clear path from setup to scaling your campaigns."
-        />
-        <div className="grid md:grid-cols-3 gap-8">
-          {processSteps.map((step) => (
-            <div key={step.step} className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-[var(--red-ox-red)] text-white text-2xl font-bold">
-                {step.step}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{step.description}</p>
-            </div>
-          ))}
-        </div>
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="How It Works"
+            title="Our 3-Step PPC Process"
+            description="A clear path from setup to scaling your campaigns."
+          />
+        </ScrollReveal>
+        <ProcessSection steps={processSteps} />
       </Section>
 
       {/* Features vs Benefits Section */}
-      <Section background="light" padding="lg">
-        <SectionHeader
-          subtitle="What You Get"
-          title="Complete Google Ads Management"
-          description="Everything you need for campaigns that actually deliver results."
-        />
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
-            <div className="grid grid-cols-2 bg-[var(--charcoal)] text-white font-semibold">
-              <div className="p-4 border-r border-[var(--charcoal-light)]">What We Do</div>
-              <div className="p-4">What It Means for You</div>
-            </div>
-            {featuresBenefits.map((item, index) => (
-              <div
-                key={item.feature}
-                className={`grid grid-cols-2 ${
-                  index % 2 === 0 ? "bg-white" : "bg-[var(--light-grey)]"
-                }`}
-              >
-                <div className="p-4 border-r border-[var(--border-grey)] text-[var(--charcoal)]">
-                  {item.feature}
-                </div>
-                <div className="p-4 text-[var(--medium-grey)]">{item.benefit}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="What You Get"
+            title="Complete Google Ads Management"
+            description="Everything you need for campaigns that actually deliver results."
+          />
+        </ScrollReveal>
+        <FeaturesBenefitsTable items={featuresBenefits} />
       </Section>
 
       {/* FAQ Section */}
-      <Section background="white" padding="lg">
-        <SectionHeader
-          subtitle="Common Questions"
-          title="Google Ads FAQs"
-          description="Answers to the questions we hear most about paid advertising."
-        />
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq) => (
-            <details
-              key={faq.question}
-              className="group bg-white border border-[var(--border-grey)] rounded-lg overflow-hidden"
-            >
-              <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-[var(--charcoal)] hover:bg-[var(--light-grey)] transition-colors">
-                {faq.question}
-                <svg
-                  className="w-5 h-5 text-[var(--medium-grey)] group-open:rotate-180 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </summary>
-              <div className="px-6 pb-6 text-[var(--medium-grey)] leading-relaxed">
-                {faq.answer}
-              </div>
-            </details>
-          ))}
-        </div>
+      <Section background="cream" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="Common Questions"
+            title="Google Ads FAQs"
+            description="Answers to the questions we hear most about paid advertising."
+          />
+        </ScrollReveal>
+        <FAQSection faqs={faqs} />
       </Section>
 
-      {/* Testimonial Section */}
-      <Section background="light" padding="lg">
-        <SectionHeader
-          subtitle="Google Reviews"
-          title="What Our Clients Say"
-          description="Real results from real businesses who trusted us with their paid advertising."
-        />
-        <Grid cols={2} gap="lg">
-          <TestimonialCard
-            quote="When I first tried Google Ads, I wasted so much money. I was only getting random leads. When I met Ryan at Red Ox Digital, he explained SEO so simply. Now we spend less money and actually generate strong leads that are converting to business."
-            author="Stephen Adnams"
-            role="Owner"
-            company="SEQ Medical"
+      {/* Testimonial Section with Carousel */}
+      <Section background="offWhite" padding="lg">
+        <ScrollReveal>
+          <SectionHeader
+            subtitle="Google Reviews"
+            title="What Our Clients Say"
+            description="Real results from real businesses who trusted us with their paid advertising."
           />
-          <TestimonialCard
-            quote="Ryan was a great help to our business and we have seen the results. Highly recommend. It was fun working with him on the photoshoot and creating the Facebook ads."
-            author="Reegan Chapman"
-            role="Business Owner"
-            company="Google Review"
-          />
-        </Grid>
+        </ScrollReveal>
+        <TestimonialCarouselSection testimonials={testimonials} />
       </Section>
 
       {/* Service Areas Section */}
-      <Section background="white" padding="md">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[var(--medium-grey)] leading-relaxed">
-            Running targeted campaigns for businesses in{" "}
-            <Link href="/locations/north-lakes-digital-marketing" className="text-[var(--red-ox-red-text)] hover:underline font-medium">
-              North Lakes
-            </Link>
-            ,{" "}
-            <Link href="/locations/narangba-digital-marketing" className="text-[var(--red-ox-red-text)] hover:underline font-medium">
-              Narangba
-            </Link>
-            , and the wider North Brisbane region.
-          </p>
-        </div>
+      <Section background="cream" padding="md">
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-[var(--text-grey)] leading-relaxed">
+              Running targeted campaigns for businesses in{" "}
+              <Link href="/locations/north-lakes-digital-marketing" className="text-[var(--red-ox-red-text)] hover:underline font-medium">
+                North Lakes
+              </Link>
+              ,{" "}
+              <Link href="/locations/narangba-digital-marketing" className="text-[var(--red-ox-red-text)] hover:underline font-medium">
+                Narangba
+              </Link>
+              , and the wider North Brisbane region.
+            </p>
+          </div>
+        </ScrollReveal>
       </Section>
 
       {/* CTA Section */}
       <Section background="primary" padding="lg">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-white mb-4">Ready to Get More Leads from Google Ads?</h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Stop wasting budget on clicks that do not convert. Get a free audit of your current
-            campaigns or let us show you what is possible for your business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="light" size="lg">
-              Get Your Free Ads Audit
-            </Button>
-            <Button
-              href="tel:+61493992661"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
-            >
-              Call 0493 992 661
-            </Button>
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-[var(--text-light)] mb-4">Ready to Get More Leads from Google Ads?</h2>
+            <p className="text-xl text-[var(--text-light)]/90 mb-8 leading-relaxed">
+              Stop wasting budget on clicks that do not convert. Get a free audit of your current
+              campaigns or let us show you what is possible for your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="light" size="lg">
+                Get Your Free Ads Audit
+              </Button>
+              <Button
+                href="tel:+61493992661"
+                variant="outline"
+                size="lg"
+                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
+              >
+                Call 0493 992 661
+              </Button>
+            </div>
+            <p className="text-[var(--text-light)]/70 text-sm mt-6">
+              No obligation. No lock-in contracts. Just a straightforward chat about your goals.
+            </p>
           </div>
-          <p className="text-white/70 text-sm mt-6">
-            No obligation. No lock-in contracts. Just a straightforward chat about your goals.
-          </p>
-        </div>
+        </ScrollReveal>
       </Section>
     </>
   );

@@ -201,7 +201,7 @@ export default function DronePhotographyPage() {
       />
 
       {/* Breadcrumb navigation */}
-      <Section background="white" padding="none" className="py-4 border-b border-[var(--border-grey)]">
+      <Section background="offWhite" padding="none" className="py-4 border-b border-[var(--border-grey)]">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-2 text-sm text-[var(--medium-grey)]">
             <li>
@@ -222,7 +222,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* Hero Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="mb-6">Drone Photography & Aerial Imaging</h1>
           <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -247,7 +247,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* Benefits Section */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Why Drone Photography"
           title="The View from Above"
@@ -274,7 +274,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* Use Cases Section */}
-      <Section id="use-cases" background="white" padding="lg">
+      <Section id="use-cases" background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Who Uses Drone Photography"
           title="Perfect for These Industries"
@@ -393,7 +393,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* Process Section */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="How It Works"
           title="Our Drone Photography Process"
@@ -413,7 +413,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Common Questions"
           title="Drone Photography FAQs"
@@ -451,7 +451,7 @@ export default function DronePhotographyPage() {
       </Section>
 
       {/* Related Services */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Related Services"
           title="Complete Your Media Package"

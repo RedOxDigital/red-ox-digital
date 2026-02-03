@@ -227,7 +227,7 @@ export default function WebsiteRedesignPage() {
       />
 
       {/* Breadcrumb navigation */}
-      <Section background="white" padding="none" className="py-4 border-b border-[var(--border-grey)]">
+      <Section background="offWhite" padding="none" className="py-4 border-b border-[var(--border-grey)]">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-2 text-sm text-[var(--medium-grey)]">
             <li>
@@ -248,7 +248,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* Hero Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="mb-6">Website Redesign Services</h1>
           <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -271,7 +271,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* Benefits Section */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Why Redesign"
           title="Refresh Without Starting Over"
@@ -298,7 +298,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* Signs You Need a Redesign Section */}
-      <Section id="signs" background="white" padding="lg">
+      <Section id="signs" background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Self-Assessment"
           title="Signs Your Website Needs a Redesign"
@@ -370,7 +370,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* Features vs Benefits Section */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="What Is Included"
           title="Everything You Need for a Successful Refresh"
@@ -400,7 +400,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section background="white" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Questions Answered"
           title="Website Redesign FAQs"
@@ -438,7 +438,7 @@ export default function WebsiteRedesignPage() {
       </Section>
 
       {/* Related Services */}
-      <Section background="light" padding="lg">
+      <Section background="offWhite" padding="lg">
         <SectionHeader
           subtitle="Other Web Design Options"
           title="Not Sure Redesign Is Right for You?"

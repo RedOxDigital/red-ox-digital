@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED OX DIGITAL - Marketing Consultant</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols (SVG-based Icon Font) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-cream: #F5F0E6;
+            --bg-off-white: #F9F6F0;
+            --primary-red: #C23B22; /* The Red Ox Color */
+            --text-dark: #1A1A1A;
+            --text-grey: #555555;
+            --text-light: #F5F0E6;
+            --border-color: rgba(194, 59, 34, 0.2);
+
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 32px;
+            --spacing-lg: 64px;
+            --spacing-xl: 96px;
+
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+
+            --container-width: 1280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Material Symbol Styling */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-padding {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+            border: 1px solid var(--primary-red);
+        }
+
+        .text-center { text-align: center; }
+        .serif-title { font-family: var(--font-serif); font-weight: 700; }
+
+        /* --- HEADER --- */
+        header {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--primary-red); }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-btn {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: var(--spacing-lg) 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-grey);
+            margin-bottom: var(--spacing-md);
+            max-width: 90%;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            height: 600px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- BENTO GRID (SERVICES) --- */
+        .bento-section {
+            background-color: var(--bg-cream);
+        }
+
+        .section-header {
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .bento-card {
+            background: #EBE5D5;
+            border: 1px solid #333;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+            transition: transform 0.2s ease;
+            box-shadow: 8px 8px 0px var(--primary-red);
+        }
+
+        .bento-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px var(--primary-red);
+        }
+
+        .bento-icon {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-red);
+        }
+
+        .bento-icon .material-symbols-outlined {
+            font-size: 40px;
+        }
+
+        .bento-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-dark);
+        }
+
+        .bento-card p {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+        }
+
+        /* --- TAB SECTION (EXPERTISE) --- */
+        .tabs-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .tab-item {
+            padding: 12px 24px;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: var(--text-grey);
+        }
+
+        .tab-item.active {
+            color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .tab-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-md);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-column {
+            background: #F9F6F0;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .feature-header {
+            background: var(--primary-red);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .feature-body {
+            padding: var(--spacing-md);
+        }
+
+        .feature-body h4 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-body p {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-img {
+            height: 150px;
+            width: 100%;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        /* --- CLIENT SUCCESS (CAROUSEL) --- */
+        .carousel-track {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .case-card {
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg) var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .client-logo {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .client-logo-icon {
+            color: var(--text-dark);
+            margin-right: 8px;
+        }
+
+        .case-quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .case-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .case-img-bottom {
+            width: 100%;
+            height: 180px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-top: auto;
+        }
+
+        .case-img-bottom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- PAGINATION DOTS --- */
+        .pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #D1D1D1;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--primary-red);
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        /* --- ACCORDION (FAQ) --- */
+        .faq-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .accordion-header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .accordion-title {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .accordion-item.active .accordion-header {
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
+        }
+
+        .accordion-body {
+            display: none;
+            padding: 16px 24px;
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            background: #F9F6F0;
+            border: 1px solid rgba(194, 59, 34, 0.1);
+            border-top: none;
+        }
+
+        .accordion-item.active .accordion-body {
+            display: block;
+        }
+
+        /* --- STATISTICS --- */
+        .stats-section {
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            gap: var(--spacing-md);
+        }
+
+        .stat-item h3 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-dark);
+        }
+
+        .stat-item p {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            color: var(--text-grey);
+            font-weight: 600;
+        }
+
+        .stat-icon {
+            margin: 0 auto var(--spacing-sm);
+            color: var(--primary-red);
+        }
+
+        .stat-icon .material-symbols-outlined {
+            font-size: 32px;
+        }
+
+        /* --- PROCESS SECTION --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .process-step {
+            background: #EBE5D5;
+            border: 1px solid #333;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            box-shadow: 8px 8px 0px var(--primary-red);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            min-height: 160px;
+            transition: transform 0.2s ease;
+        }
+
+        .process-step:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px var(--primary-red);
+        }
+
+        .process-icon {
+            color: var(--primary-red);
+            margin-bottom: 4px;
+        }
+
+        .process-icon .material-symbols-outlined {
+            font-size: 32px;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .process-step h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        /* --- UPDATED TEAM SECTION --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .team-card {
+            text-align: left; /* Left align content as per screenshot */
+        }
+
+        .team-img-wrapper {
+            width: 100%;
+            height: 160px; /* Rectangular landscape orientation */
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+        }
+
+        .team-role {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        /* --- BLOG SECTION --- */
+        .blog-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .blog-header-wrapper h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .blog-nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .blog-nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .blog-nav-btn.inactive {
+            background-color: #EBE5D5;
+            color: #A09D94;
+        }
+
+        .blog-nav-btn.active {
+            background-color: var(--primary-red);
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card {
+            background: transparent;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-img-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .blog-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 0;
+        }
+
+        .blog-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        .blog-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .read-more {
+            color: var(--primary-red);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            display: inline-block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #EBE6DC;
+            padding: var(--spacing-xl) 0 var(--spacing-md);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-brand h4 {
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-brand h4 span { color: var(--primary-red); }
+
+        .footer-col h5 {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            margin-top: var(--spacing-sm);
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: transparent;
+        }
+
+        .newsletter-form button {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 0 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: var(--spacing-sm);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-grey);
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .footer-social-icons .material-symbols-outlined {
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* --- INTERACTIVE ENHANCEMENTS --- */
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll-triggered animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+
+        /* Stagger children animation */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; }
+
+        .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header scroll effect */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-cream);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            background-color: rgba(245, 240, 230, 0.95);
+        }
+
+        /* Nav link hover effects */
+        nav a {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-red);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Button enhancements */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Unified CTA Button Interactions */
+        .btn-primary,
+        .nav-btn,
+        .newsletter-form button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover,
+        .nav-btn:hover,
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(194, 59, 34, 0.3);
+        }
+
+        .btn-primary:active,
+        .nav-btn:active,
+        .newsletter-form button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(194, 59, 34, 0.25);
+        }
+
+        /* Hero animations */
+        .hero-content h1 {
+            overflow: visible;
+        }
+
+        .hero-content h1 .line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .hero-content h1 .line::after {
+            content: attr(data-text);
+        }
+
+        .hero-content h1 .line {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-content h1 .line:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content p {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+        }
+
+        .hero-content .btn {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero image parallax & hover */
+        .hero-image {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Bento card enhancements */
+        .bento-card {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bento-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--primary-red);
+        }
+
+        .bento-card:hover .bento-icon .material-symbols-outlined {
+            transform: scale(1.15);
+        }
+
+        .bento-icon .material-symbols-outlined {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Tab interactivity */
+        .tab-item {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-red);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+
+        .tab-item:hover {
+            color: var(--primary-red);
+        }
+
+        .tab-item.active::after {
+            width: 100%;
+        }
+
+        .tab-item:not(.active):hover::after {
+            width: 50%;
+            opacity: 0.5;
+        }
+
+        /* Tab content panels */
+        .tab-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .tab-panel.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-md);
+            animation: tabFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes tabFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Feature column hover */
+        .feature-column {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-column:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-img img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-column:hover .feature-img img {
+            transform: scale(1.1);
+        }
+
+        /* Carousel enhancements */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .case-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-red);
+            box-shadow: 0 20px 40px rgba(194, 59, 34, 0.15);
+        }
+
+        .case-img-bottom img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .case-card:hover .case-img-bottom img {
+            transform: scale(1.1);
+        }
+
+        /* Pagination dots */
+        .dot {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dot:hover:not(.active) {
+            background-color: rgba(194, 59, 34, 0.5);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            animation: dotExpand 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes dotExpand {
+            0% { width: 10px; }
+            50% { width: 30px; }
+            100% { width: 24px; }
+        }
+
+        /* Accordion enhancements */
+        .accordion-header {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .accordion-header:hover {
+            opacity: 0.9;
+        }
+
+        .accordion-header .material-symbols-outlined {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .accordion-item.active .accordion-header .material-symbols-outlined {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 24px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+
+        .accordion-item.active .accordion-body {
+            max-height: 200px;
+            padding: 16px 24px;
+            opacity: 1;
+        }
+
+        /* Stats counter animation */
+        .stat-item h3 {
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover h3 {
+            transform: scale(1.05);
+            color: var(--primary-red);
+        }
+
+        .stat-icon .material-symbols-outlined {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat-item:hover .stat-icon .material-symbols-outlined {
+            transform: scale(1.15);
+        }
+
+        /* Process step enhancements */
+        .process-step {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .process-step:hover {
+            transform: translate(-6px, -6px);
+            box-shadow: 14px 14px 0px var(--primary-red);
+        }
+
+        .process-step:hover .process-icon .material-symbols-outlined {
+            transform: scale(1.15);
+        }
+
+        /* --- BENTO GALLERY SECTION (Compact) --- */
+        .gallery-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 120px;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            background: #EBE5D5;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Compact bento sizes using 12-col grid */
+        .gallery-item.g-lg { grid-column: span 5; grid-row: span 2; }
+        .gallery-item.g-md { grid-column: span 4; grid-row: span 2; }
+        .gallery-item.g-sm { grid-column: span 3; grid-row: span 2; }
+        .gallery-item.g-wide { grid-column: span 4; grid-row: span 1; }
+        .gallery-item.g-sq { grid-column: span 3; grid-row: span 1; }
+
+        /* Info box that slides up on hover */
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-off-white);
+            padding: 10px 12px;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            border-top: 2px solid var(--primary-red);
+        }
+
+        .gallery-item:hover .gallery-info {
+            transform: translateY(0);
+        }
+
+        .gallery-info-category {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary-red);
+            margin-bottom: 2px;
+        }
+
+        .gallery-info-title {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .gallery-info-desc {
+            font-size: 0.7rem;
+            color: var(--text-grey);
+            margin-top: 4px;
+            line-height: 1.3;
+        }
+
+        /* Larger items get more info padding & show description */
+        .gallery-item.g-lg .gallery-info,
+        .gallery-item.g-md .gallery-info {
+            padding: 12px 14px;
+        }
+
+        .gallery-item.g-lg .gallery-info-title {
+            font-size: 1rem;
+        }
+
+        .gallery-item.g-md .gallery-info-title {
+            font-size: 0.9rem;
+        }
+
+        /* Gallery responsive */
+        @media (max-width: 900px) {
+            .gallery-bento {
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: 100px;
+            }
+
+            .gallery-item.g-lg { grid-column: span 4; grid-row: span 2; }
+            .gallery-item.g-md { grid-column: span 3; grid-row: span 2; }
+            .gallery-item.g-sm { grid-column: span 3; grid-row: span 2; }
+            .gallery-item.g-wide { grid-column: span 3; grid-row: span 1; }
+            .gallery-item.g-sq { grid-column: span 2; grid-row: span 1; }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-bento {
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: 90px;
+            }
+
+            .gallery-item.g-lg,
+            .gallery-item.g-md { grid-column: span 4; grid-row: span 2; }
+            .gallery-item.g-sm { grid-column: span 2; grid-row: span 2; }
+            .gallery-item.g-wide { grid-column: span 4; grid-row: span 1; }
+            .gallery-item.g-sq { grid-column: span 2; grid-row: span 1; }
+
+            .gallery-info {
+                padding: 8px 10px;
+            }
+
+            .gallery-info-title {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Team card hover */
+        .team-card {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .team-img-wrapper {
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-img-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-card:hover .team-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .team-card:hover .team-img-wrapper {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Blog card hover */
+        .blog-card {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .blog-img-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover .blog-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .read-more {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .read-more::after {
+            content: ' →';
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .blog-card:hover .read-more::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Blog nav buttons */
+        .blog-nav-btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-nav-btn.active:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(194, 59, 34, 0.3);
+        }
+
+        .blog-nav-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Form input animations */
+        .newsletter-form input {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #ccc;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(194, 59, 34, 0.1);
+            transform: translateY(-2px);
+        }
+
+
+        /* Footer social icons */
+        .footer-social-icons .material-symbols-outlined {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .footer-social-icons .material-symbols-outlined:hover {
+            color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        /* Footer link hover */
+        .footer-col ul li a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Magnetic button effect class */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Loading shimmer for images */
+        .img-loading {
+            background: linear-gradient(90deg, #EBE5D5 25%, #F5F0E6 50%, #EBE5D5 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-red);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a33220;
+        }
+
+        /* Selection color */
+        ::selection {
+            background-color: var(--primary-red);
+            color: white;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero-grid, .bento-grid, .tab-content, .tab-panel.active, .stats-grid, .process-grid, .team-grid, .blog-grid, .footer-grid, .carousel-track {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 { font-size: 3rem; }
+            .bento-grid { grid-template-columns: 1fr 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .blog-header-wrapper { flex-direction: column; align-items: flex-start; gap: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .bento-grid, .process-grid, .team-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- EXPANDABLE CONTENT CARD --- */
+        .expandable-section {
+            background-color: var(--bg-off-white);
+        }
+
+        .expandable-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .expandable-card {
+            background: #EBE5D5;
+            border: 1px solid #333;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 8px 8px 0px var(--primary-red);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expandable-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px var(--primary-red);
+        }
+
+        .expandable-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .expandable-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expandable-card:hover .expandable-card-image img {
+            transform: scale(1.05);
+        }
+
+        .expandable-card-content {
+            padding: var(--spacing-md);
+        }
+
+        .expandable-card-header {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .expandable-card-subtext {
+            font-size: 0.95rem;
+            color: var(--text-grey);
+            line-height: 1.5;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .expandable-card-details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expandable-card.expanded .expandable-card-details {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .expandable-card-details p {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .expandable-card-details ul {
+            margin-left: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .expandable-card-details ul li {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .expandable-card-details ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-red);
+            border-radius: 50%;
+        }
+
+        .expand-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expand-btn:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .expand-btn .material-symbols-outlined {
+            font-size: 18px;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .expandable-card.expanded .expand-btn .material-symbols-outlined {
+            transform: rotate(180deg);
+        }
+
+        .expandable-card.expanded .expand-btn {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .expandable-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">Red Ox <span>Digital</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="nav-btn">WPP / Ogilvy</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>
+                    <span class="line">Crafting Connections</span>
+                    <span class="line">That Convert.</span>
+                </h1>
+                <p>Expert Marketing Consulting for a Digital-First World. We build strategies that drive real growth.</p>
+                <a href="#" class="btn btn-primary">Start a Conversation</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1974&auto=format&fit=crop" alt="Hand placing puzzle piece">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid (Services) -->
+    <section class="section-padding bento-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Capabilities</h2>
+                <p>Comprehensive solutions for modern brands</p>
+            </div>
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">insights</span>
+                    </div>
+                    <div>
+                        <h3>Strategy</h3>
+                        <p>Expert marketing consulting for corporate strategy.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">brush</span>
+                    </div>
+                    <div>
+                        <h3>Creative</h3>
+                        <p>Create visual dimensions across digital content.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <div>
+                        <h3>Data</h3>
+                        <p>Data-driven insights for competitive market advantages.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">settings_input_component</span>
+                    </div>
+                    <div>
+                        <h3>Technology</h3>
+                        <p>Create new ecommerce marketing digital first worlds.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">hub</span>
+                    </div>
+                    <div>
+                        <h3>Social</h3>
+                        <p>Curate distant proven per social and component.</p>
+                    </div>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-icon">
+                        <span class="material-symbols-outlined">description</span>
+                    </div>
+                    <div>
+                        <h3>Content</h3>
+                        <p>Ensures assets promoting content signs and content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Section -->
+    <section class="section-padding">
+        <div class="container tabs-container">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h2 class="serif-title" style="font-size: 2.5rem;">Our Expertise</h2>
+                <p>Expert marketing consulting for a digital-first world.</p>
+            </div>
+
+            <div class="tabs-nav">
+                <div class="tab-item active">Strategy</div>
+                <div class="tab-item">Creative</div>
+                <div class="tab-item">Technology</div>
+            </div>
+
+            <div class="tab-content">
+                <div class="feature-column">
+                    <div class="feature-header">Strategy</div>
+                    <div class="feature-body">
+                        <h4>Strategic Growth</h4>
+                        <p>Leveraging deep market research to define clear paths for brand scaling and expansion.</p>
+                        <div class="feature-img">
+                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Strategy Meeting">
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-column">
+                    <div class="feature-header">Creative</div>
+                    <div class="feature-body">
+                        <h4>Visual Identity</h4>
+                        <p>Crafting unique visual languages that resonate with audiences and build long-term trust.</p>
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Creative Design">
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-column">
+                    <div class="feature-header">Technology</div>
+                    <div class="feature-body">
+                        <h4>Digital Product</h4>
+                        <p>Building high-performance ecommerce platforms and mobile experiences for modern users.</p>
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Coding">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Success Carousel -->
+    <section class="section-padding" style="background-color: #F9F6F0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Success Stories</h2>
+            </div>
+            <div class="carousel-track">
+                <div class="case-card">
+                    <div class="client-logo">
+                        <span class="material-symbols-outlined client-logo-icon">public</span> commerce
+                    </div>
+                    <p class="case-quote">"Lorem ipsum dolors sitti amet consectetuer adipiscing and campaings oli, uke mruit inire orti osmilo soisidie."</p>
+                    <div class="case-link">E-Commerce</div>
+                    <div class="case-img-bottom">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Ecommerce Laptop">
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="client-logo">
+                        <span class="material-symbols-outlined client-logo-icon">shopping_bag</span> Shopify
+                    </div>
+                    <p class="case-quote">"Lorem ipsum dolors sitti amet consectetuer adipiscing and auomes uroniduts ovorti my eonr soisis."</p>
+                    <div class="case-link">New Project</div>
+                    <div class="case-img-bottom">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" alt="Shopify Mobile">
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="client-logo">
+                        <span class="material-symbols-outlined client-logo-icon">campaign</span> campaign
+                    </div>
+                    <p class="case-quote">"Lorem ipsum dolors sitti amet consectetuer adipiscing and campaings ois eisanroit imim oid estelia soisidie."</p>
+                    <div class="case-link">New Project</div>
+                    <div class="case-img-bottom">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Campaign Analytics">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accordion / FAQ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Accordion Section <br> FAQs</h2>
+            </div>
+            <div class="faq-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">What services does Red Ox Digital offer?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <div class="accordion-body">
+                        We offer comprehensive digital marketing solutions including brand strategy, creative design, web development, e-commerce platforms, data analytics, and social media management.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">How long does a typical project take?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <div class="accordion-body">
+                        Project timelines vary based on scope and complexity. A brand identity project typically takes 4-6 weeks, while a full website build can range from 8-12 weeks. We'll provide detailed timelines during our discovery phase.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">What industries do you work with?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <div class="accordion-body">
+                        We work across diverse industries including technology, e-commerce, healthcare, finance, and professional services. Our strategic approach adapts to each industry's unique challenges and opportunities.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">How do you measure success?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <div class="accordion-body">
+                        We establish clear KPIs at the start of each engagement. These typically include metrics like conversion rates, engagement, brand awareness, and ROI. We provide regular reporting and analytics dashboards.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section-padding stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                 <div class="stat-icon"><span class="material-symbols-outlined">leaderboard</span></div>
+                <h3>6,299</h3>
+                <p>Managed Owners</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><span class="material-symbols-outlined">pie_chart</span></div>
+                <h3>3200</h3>
+                <p>Balance Members</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><span class="material-symbols-outlined">event_available</span></div>
+                <h3>356</h3>
+                <p>Our Statistics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Process Section</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-icon"><span class="material-symbols-outlined">biotech</span></div>
+                    <h4>Step 1. Process</h4>
+                    <p>Use the stepins problem technology.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon"><span class="material-symbols-outlined">military_tech</span></div>
+                    <h4>Step 2. Peasow</h4>
+                    <p>Vicer horse devire steps for the process.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon"><span class="material-symbols-outlined">account_tree</span></div>
+                    <h4>Step 3. Procesino</h4>
+                    <p>Have the exploration and voice the process.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-icon"><span class="material-symbols-outlined">layers</span></div>
+                    <h4>Step 4. Continising</h4>
+                    <p>Have the steps and precision of measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Gallery Section -->
+    <section class="section-padding" style="background-color: #F9F6F0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <p>Selected projects showcasing our creative capabilities</p>
+            </div>
+            <div class="gallery-bento">
+                <!-- Row 1 -->
+                <div class="gallery-item g-lg">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="E-commerce">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">E-Commerce</span>
+                        <span class="gallery-info-title">Retail Platform Redesign</span>
+                        <span class="gallery-info-desc">Complete overhaul increasing conversions by 40%</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-sm">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Strategy">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Strategy</span>
+                        <span class="gallery-info-title">Brand Workshop</span>
+                        <span class="gallery-info-desc">Market positioning for tech startup</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-md">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Analytics">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Analytics</span>
+                        <span class="gallery-info-title">Data Dashboard</span>
+                        <span class="gallery-info-desc">Real-time KPI tracking system</span>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="gallery-item g-wide">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Development">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Development</span>
+                        <span class="gallery-info-title">SaaS Platform</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-sq">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=2070&auto=format&fit=crop" alt="Design">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Design</span>
+                        <span class="gallery-info-title">UI Kit</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-sq">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2070&auto=format&fit=crop" alt="Social">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Social</span>
+                        <span class="gallery-info-title">Campaign</span>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="gallery-item g-md">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop" alt="E-commerce">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">E-Commerce</span>
+                        <span class="gallery-info-title">Mobile Commerce</span>
+                        <span class="gallery-info-desc">Native app for luxury retailer</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-sm">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Consulting">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Consulting</span>
+                        <span class="gallery-info-title">Growth Strategy</span>
+                        <span class="gallery-info-desc">Market expansion roadmap</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item g-lg">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Branding">
+                    <div class="gallery-info">
+                        <span class="gallery-info-category">Branding</span>
+                        <span class="gallery-info-title">Complete Brand Identity</span>
+                        <span class="gallery-info-desc">Logo, guidelines, and digital assets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Team Section (Rectangular & Left-Aligned) -->
+    <section class="section-padding" style="background-color: #F9F6F0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Team Section</h2>
+            </div>
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Dasce Bobson">
+                    </div>
+                    <div class="team-name">Dasce Bobson</div>
+                    <div class="team-role">Head Director<br>Consectetur and elitokater</div>
+                </div>
+                <!-- Member 2 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" alt="Marie Denain">
+                    </div>
+                    <div class="team-name">Marie Denain</div>
+                    <div class="team-role">Head Director<br>Consectetu wheatdooster</div>
+                </div>
+                <!-- Member 3 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Malie Gecion">
+                    </div>
+                    <div class="team-name">Malie Gecion</div>
+                    <div class="team-role">Head Director<br>Consectetur wheetflussant Director</div>
+                </div>
+                <!-- Member 4 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Lavrie Gniritn">
+                    </div>
+                    <div class="team-name">Lavrie Gniritn</div>
+                    <div class="team-role">Head Director<br>Consectetur wheetflussant Director</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="blog-header-wrapper">
+                <h2>Blog Section</h2>
+                <div class="blog-nav">
+                    <div class="blog-nav-btn inactive" data-direction="prev">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </div>
+                    <div class="blog-nav-btn active" data-direction="next">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070&auto=format&fit=crop" alt="Blog 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-title">Recent Post for ailowte to din...</div>
+                        <p class="blog-excerpt">Exploring the new frontier of digital identity and brand trust.</p>
+                        <a href="#" class="read-more">Recent post</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop" alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-title">Recent Post for a Toxtent</div>
+                        <p class="blog-excerpt">How data analytics is reshaping the consulting landscape.</p>
+                        <a href="#" class="read-more">Recent post</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop" alt="Blog 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-title">Recent Post to diess Now</div>
+                        <p class="blog-excerpt">The importance of human connection in an automated world.</p>
+                        <a href="#" class="read-more">Recent post</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expandable Content Cards Section -->
+    <section class="section-padding expandable-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learn More</h2>
+                <p>Explore our expertise in detail</p>
+            </div>
+            <div class="expandable-grid">
+                <!-- Card 1 -->
+                <div class="expandable-card">
+                    <div class="expandable-card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Digital Strategy">
+                    </div>
+                    <div class="expandable-card-content">
+                        <h3 class="expandable-card-header">Digital Strategy</h3>
+                        <p class="expandable-card-subtext">Transform your business with data-driven digital strategies that deliver measurable results.</p>
+                        <div class="expandable-card-details">
+                            <p>Our digital strategy services help businesses navigate the complex digital landscape. We analyze your current position, identify opportunities, and create actionable roadmaps for growth.</p>
+                            <ul>
+                                <li>Market analysis and competitive positioning</li>
+                                <li>Customer journey mapping</li>
+                                <li>Technology stack recommendations</li>
+                                <li>KPI framework development</li>
+                            </ul>
+                            <p>With over a decade of experience, we've helped companies across industries achieve sustainable digital transformation.</p>
+                        </div>
+                        <button class="expand-btn" onclick="toggleExpand(this)">
+                            Read More
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="expandable-card">
+                    <div class="expandable-card-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Brand Development">
+                    </div>
+                    <div class="expandable-card-content">
+                        <h3 class="expandable-card-header">Brand Development</h3>
+                        <p class="expandable-card-subtext">Build a brand identity that resonates with your audience and stands out in the market.</p>
+                        <div class="expandable-card-details">
+                            <p>Your brand is more than a logo. It's the complete experience customers have with your company. We craft cohesive brand identities that tell your story and build lasting connections.</p>
+                            <ul>
+                                <li>Brand strategy and positioning</li>
+                                <li>Visual identity design</li>
+                                <li>Brand guidelines and systems</li>
+                                <li>Messaging and tone of voice</li>
+                            </ul>
+                            <p>From startups to established enterprises, we've built brands that people remember and trust.</p>
+                        </div>
+                        <button class="expand-btn" onclick="toggleExpand(this)">
+                            Read More
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="expandable-card">
+                    <div class="expandable-card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Analytics">
+                    </div>
+                    <div class="expandable-card-content">
+                        <h3 class="expandable-card-header">Data Analytics</h3>
+                        <p class="expandable-card-subtext">Turn raw data into actionable insights that drive smarter business decisions.</p>
+                        <div class="expandable-card-details">
+                            <p>In a data-rich world, the ability to extract meaningful insights is a competitive advantage. Our analytics services help you understand your customers, optimize operations, and predict trends.</p>
+                            <ul>
+                                <li>Custom dashboard development</li>
+                                <li>Predictive analytics and modeling</li>
+                                <li>Customer behavior analysis</li>
+                                <li>ROI tracking and attribution</li>
+                            </ul>
+                            <p>We combine technical expertise with business acumen to deliver insights that matter.</p>
+                        </div>
+                        <button class="expand-btn" onclick="toggleExpand(this)">
+                            Read More
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="expandable-card">
+                    <div class="expandable-card-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Growth Marketing">
+                    </div>
+                    <div class="expandable-card-content">
+                        <h3 class="expandable-card-header">Growth Marketing</h3>
+                        <p class="expandable-card-subtext">Accelerate your growth with targeted marketing strategies that maximize ROI.</p>
+                        <div class="expandable-card-details">
+                            <p>Growth isn't just about spending more on marketing. It's about finding the right channels, messages, and tactics that resonate with your audience and convert them into loyal customers.</p>
+                            <ul>
+                                <li>Performance marketing campaigns</li>
+                                <li>Conversion rate optimization</li>
+                                <li>Content marketing strategy</li>
+                                <li>Marketing automation</li>
+                            </ul>
+                            <p>Our data-driven approach ensures every dollar spent contributes to your bottom line.</p>
+                        </div>
+                        <button class="expand-btn" onclick="toggleExpand(this)">
+                            Read More
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>RED OX <span>DIGITAL</span></h4>
+                    <p>Follow us</p>
+                    <div class="footer-social-icons">
+                        <span class="material-symbols-outlined">facebook</span>
+                        <span class="material-symbols-outlined">photo_camera</span>
+                        <span class="material-symbols-outlined">alternate_email</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Home</h5>
+                    <ul>
+                        <li><a href="#">Creative</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Social Links</h5>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <form class="newsletter-form">
+                        <input type="text" placeholder="Name">
+                    </form>
+                    <form class="newsletter-form" style="margin-top: 10px;">
+                        <input type="email" placeholder="Email">
+                    </form>
+                    <div class="newsletter-form" style="margin-top: 10px;">
+                        <button type="button">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <div>&copy; 2026 RED OX DIGITAL</div>
+                 <div>Privacy Policy</div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // ========================================
+    // EXPANDABLE CARD TOGGLE
+    // ========================================
+    function toggleExpand(button) {
+        const card = button.closest('.expandable-card');
+        const isExpanded = card.classList.contains('expanded');
+
+        card.classList.toggle('expanded');
+        button.innerHTML = isExpanded
+            ? 'Read More <span class="material-symbols-outlined">expand_more</span>'
+            : 'Show Less <span class="material-symbols-outlined">expand_more</span>';
+    }
+
+    // ========================================
+    // HIGH-END INTERACTIVE EXPERIENCE
+    // Apple/Google-style interactions
+    // ========================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // ========================================
+        // 1. SCROLL-TRIGGERED ANIMATIONS
+        // ========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Add animation classes to elements
+        document.querySelectorAll('.section-header, .bento-card, .feature-column, .case-card, .accordion-item, .stat-item, .process-step, .team-card, .blog-card, .gallery-item, .expandable-card').forEach((el, index) => {
+            el.classList.add('animate-on-scroll');
+            if (index % 6 < 6) {
+                el.classList.add(`delay-${(index % 6) + 1}`);
+            }
+            animateOnScroll.observe(el);
+        });
+
+        // Stagger children for grids
+        document.querySelectorAll('.bento-grid, .process-grid, .team-grid, .blog-grid, .carousel-track, .gallery-bento, .expandable-grid').forEach(grid => {
+            grid.classList.add('stagger-children');
+            animateOnScroll.observe(grid);
+        });
+
+        // ========================================
+        // 2. HEADER SCROLL EFFECT
+        // ========================================
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ========================================
+        // 3. TABS INTERACTIVITY
+        // ========================================
+        const tabItems = document.querySelectorAll('.tab-item');
+        const tabContent = document.querySelector('.tab-content');
+
+        // Tab content data
+        const tabData = {
+            'Strategy': {
+                columns: [
+                    { header: 'Research', title: 'Market Analysis', desc: 'Deep dive into market trends, competitor analysis, and consumer behavior patterns.', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'Planning', title: 'Strategic Growth', desc: 'Leveraging deep market research to define clear paths for brand scaling.', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'Execution', title: 'Implementation', desc: 'Turning strategic vision into actionable campaigns with measurable results.', img: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop' }
+                ]
+            },
+            'Creative': {
+                columns: [
+                    { header: 'Branding', title: 'Visual Identity', desc: 'Crafting unique visual languages that resonate with audiences.', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'Design', title: 'Digital Assets', desc: 'Creating stunning visuals for web, social, and print media.', img: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'Motion', title: 'Animation', desc: 'Bringing brands to life with captivating motion graphics.', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop' }
+                ]
+            },
+            'Technology': {
+                columns: [
+                    { header: 'Development', title: 'Web Platforms', desc: 'Building high-performance websites and web applications.', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'E-Commerce', title: 'Digital Stores', desc: 'Creating seamless shopping experiences that convert visitors.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop' },
+                    { header: 'Integration', title: 'Systems', desc: 'Connecting platforms and automating workflows for efficiency.', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop' }
+                ]
+            }
+        };
+
+        function updateTabContent(tabName) {
+            const data = tabData[tabName];
+            if (!data) return;
+
+            tabContent.style.opacity = '0';
+            tabContent.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                tabContent.innerHTML = data.columns.map(col => `
+                    <div class="feature-column">
+                        <div class="feature-header">${col.header}</div>
+                        <div class="feature-body">
+                            <h4>${col.title}</h4>
+                            <p>${col.desc}</p>
+                            <div class="feature-img">
+                                <img src="${col.img}" alt="${col.title}">
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                requestAnimationFrame(() => {
+                    tabContent.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                    tabContent.style.opacity = '1';
+                    tabContent.style.transform = 'translateY(0)';
+                });
+            }, 300);
+        }
+
+        tabItems.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabItems.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                updateTabContent(tab.textContent.trim());
+            });
+        });
+
+        // ========================================
+        // 4. ACCORDION FUNCTIONALITY
+        // ========================================
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+
+            // Add body content if missing
+            if (!item.querySelector('.accordion-body')) {
+                const body = document.createElement('div');
+                body.className = 'accordion-body';
+                body.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.';
+                item.appendChild(body);
+            }
+
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all accordions
+                accordionItems.forEach(i => {
+                    i.classList.remove('active');
+                    const h = i.querySelector('.accordion-header');
+                    h.style.background = 'var(--primary-red)';
+                    h.style.color = 'white';
+                    h.style.border = 'none';
+                });
+
+                // Open clicked one if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    header.style.background = 'transparent';
+                    header.style.color = 'var(--primary-red)';
+                    header.style.border = '1px solid var(--primary-red)';
+                }
+            });
+        });
+
+        // ========================================
+        // 5. STATS COUNTER ANIMATION
+        // ========================================
+        const statNumbers = document.querySelectorAll('.stat-item h3');
+
+        const countUp = (element, target, suffix = '') => {
+            const duration = 2000;
+            const start = 0;
+            const startTime = performance.now();
+
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Easing function (ease-out-expo)
+                const easeOut = 1 - Math.pow(1 - progress, 4);
+                const current = Math.floor(start + (target - start) * easeOut);
+
+                element.textContent = current.toLocaleString() + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            requestAnimationFrame(animate);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const text = entry.target.textContent;
+                    const number = parseInt(text.replace(/,/g, ''));
+
+                    if (!isNaN(number)) {
+                        entry.target.textContent = '0';
+                        countUp(entry.target, number);
+                    }
+
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => statsObserver.observe(stat));
+
+        // ========================================
+        // 6. CAROUSEL/SLIDER FUNCTIONALITY
+        // ========================================
+        const dots = document.querySelectorAll('.dot');
+        const carouselTrack = document.querySelector('.carousel-track');
+        const caseCards = document.querySelectorAll('.case-card');
+        let currentSlide = 0;
+
+        // Carousel data for different slides
+        const carouselData = [
+            [
+                { icon: 'public', company: 'Commerce', quote: '"Their strategic approach transformed our online presence completely."', type: 'E-Commerce', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop' },
+                { icon: 'shopping_bag', company: 'Shopify', quote: '"The team delivered beyond our expectations with innovative solutions."', type: 'New Project', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop' },
+                { icon: 'campaign', company: 'Campaign', quote: '"Outstanding results that exceeded all our KPIs and benchmarks."', type: 'New Project', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop' }
+            ],
+            [
+                { icon: 'analytics', company: 'DataCorp', quote: '"Data-driven insights that revolutionized our decision making."', type: 'Analytics', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop' },
+                { icon: 'code', company: 'TechStart', quote: '"Exceptional technical expertise and flawless execution."', type: 'Development', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop' },
+                { icon: 'brush', company: 'DesignCo', quote: '"Creative solutions that truly captured our brand essence."', type: 'Branding', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop' }
+            ],
+            [
+                { icon: 'rocket_launch', company: 'LaunchPad', quote: '"From concept to launch, they guided us every step of the way."', type: 'Startup', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop' },
+                { icon: 'groups', company: 'TeamWork', quote: '"A true partnership that drove exceptional business growth."', type: 'Consulting', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop' },
+                { icon: 'trending_up', company: 'GrowthLab', quote: '"Measurable results and continuous optimization."', type: 'Growth', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop' }
+            ]
+        ];
+
+        function updateCarousel(slideIndex) {
+            const data = carouselData[slideIndex];
+
+            carouselTrack.style.opacity = '0';
+            carouselTrack.style.transform = 'translateX(20px)';
+
+            setTimeout(() => {
+                carouselTrack.innerHTML = data.map(card => `
+                    <div class="case-card">
+                        <div class="client-logo">
+                            <span class="material-symbols-outlined client-logo-icon">${card.icon}</span> ${card.company}
+                        </div>
+                        <p class="case-quote">${card.quote}</p>
+                        <div class="case-link">${card.type}</div>
+                        <div class="case-img-bottom">
+                            <img src="${card.img}" alt="${card.company}">
+                        </div>
+                    </div>
+                `).join('');
+
+                requestAnimationFrame(() => {
+                    carouselTrack.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    carouselTrack.style.opacity = '1';
+                    carouselTrack.style.transform = 'translateX(0)';
+                });
+            }, 300);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                currentSlide = index;
+                updateCarousel(index);
+            });
+        });
+
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+            updateCarousel(currentSlide);
+        }, 6000);
+
+        // ========================================
+        // 7. BLOG NAVIGATION
+        // ========================================
+        const blogNavBtns = document.querySelectorAll('.blog-nav-btn');
+        const blogGrid = document.querySelector('.blog-grid');
+        let blogPage = 0;
+
+        const blogData = [
+            [
+                { title: 'The Future of Digital Marketing in 2026', excerpt: 'Exploring emerging trends and technologies shaping the industry.', img: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070&auto=format&fit=crop' },
+                { title: 'Building Brand Trust Online', excerpt: 'How data analytics is reshaping the consulting landscape.', img: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop' },
+                { title: 'Human Connection in Digital Age', excerpt: 'The importance of authentic engagement in an automated world.', img: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop' }
+            ],
+            [
+                { title: 'Mastering Social Media Strategy', excerpt: 'Key insights for maximizing your social media presence.', img: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2070&auto=format&fit=crop' },
+                { title: 'E-Commerce Trends to Watch', excerpt: 'The technologies driving online retail forward.', img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop' },
+                { title: 'Content That Converts', excerpt: 'Creating compelling content that drives results.', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop' }
+            ]
+        ];
+
+        function updateBlogGrid(direction) {
+            if (direction === 'next' && blogPage < blogData.length - 1) {
+                blogPage++;
+            } else if (direction === 'prev' && blogPage > 0) {
+                blogPage--;
+            } else {
+                return;
+            }
+
+            // Update button states
+            blogNavBtns[0].classList.toggle('active', blogPage > 0);
+            blogNavBtns[0].classList.toggle('inactive', blogPage === 0);
+            blogNavBtns[1].classList.toggle('active', blogPage < blogData.length - 1);
+            blogNavBtns[1].classList.toggle('inactive', blogPage === blogData.length - 1);
+
+            const data = blogData[blogPage];
+
+            blogGrid.style.opacity = '0';
+            blogGrid.style.transform = direction === 'next' ? 'translateX(30px)' : 'translateX(-30px)';
+
+            setTimeout(() => {
+                blogGrid.innerHTML = data.map(post => `
+                    <div class="blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="${post.img}" alt="${post.title}">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-title">${post.title}</div>
+                            <p class="blog-excerpt">${post.excerpt}</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                `).join('');
+
+                requestAnimationFrame(() => {
+                    blogGrid.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                    blogGrid.style.opacity = '1';
+                    blogGrid.style.transform = 'translateX(0)';
+                });
+            }, 250);
+        }
+
+        blogNavBtns[0].addEventListener('click', () => updateBlogGrid('prev'));
+        blogNavBtns[1].addEventListener('click', () => updateBlogGrid('next'));
+
+        // ========================================
+        // 8. MAGNETIC BUTTON EFFECT (Subtle & Uniform)
+        // ========================================
+        document.querySelectorAll('.btn, .nav-btn, .blog-nav-btn.active, .newsletter-form button').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Subtle magnetic pull - uniform across all CTAs
+                btn.style.transform = `translateY(-3px) translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+
+        // ========================================
+        // 9. SMOOTH SCROLL FOR NAV LINKS
+        // ========================================
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Add a subtle click animation
+                link.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    link.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // ========================================
+        // 10. IMAGE LAZY LOADING WITH ANIMATION
+        // ========================================
+        const images = document.querySelectorAll('img');
+
+        images.forEach(img => {
+            img.addEventListener('load', () => {
+                img.style.animation = 'fadeIn 0.5s ease forwards';
+            });
+        });
+
+        // ========================================
+        // 11. RIPPLE EFFECT FOR BUTTONS
+        // ========================================
+        document.querySelectorAll('.btn-primary, .nav-btn, .newsletter-form button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    background: rgba(255, 255, 255, 0.4);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    transform: scale(0);
+                    animation: rippleEffect 0.6s ease-out;
+                    left: ${e.clientX - rect.left}px;
+                    top: ${e.clientY - rect.top}px;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: -10px;
+                    margin-top: -10px;
+                `;
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rippleEffect {
+                to {
+                    transform: scale(20);
+                    opacity: 0;
+                }
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ========================================
+        // 12. PARALLAX EFFECT ON HERO
+        // ========================================
+        const heroImage = document.querySelector('.hero-image img');
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (heroImage && scrolled < 800) {
+                heroImage.style.transform = `translateY(${scrolled * 0.15}px) scale(${1 + scrolled * 0.0002})`;
+            }
+        });
+
+        // ========================================
+        // 13. FORM VALIDATION FEEDBACK
+        // ========================================
+        document.querySelectorAll('.newsletter-form input').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#4CAF50';
+                }
+            });
+
+            input.addEventListener('input', function() {
+                this.style.borderColor = '#ccc';
+            });
+        });
+
+        console.log('🚀 RED OX DIGITAL - Interactive Experience Loaded');
+    });
+</script>
+
+</body>
+</html>
