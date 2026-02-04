@@ -260,10 +260,10 @@ export default function AboutPage() {
               <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-4">
                 About Red Ox Digital
               </p>
-              <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] mb-6">
+              <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>
                 Your Local Freelance Digital Marketer in North Brisbane
               </h1>
-              <p className="text-lg md:text-xl text-[var(--text-grey)] mb-8">
+              <p className="text-lg md:text-xl text-[var(--text-grey)] mb-8" style={{ paddingTop: "48px" }}>
                 Tired of agencies that overpromise and underdeliver? We are the
                 antidote. Just one experienced freelance digital marketer, working
                 directly with you, focused on what actually matters: getting you
@@ -675,9 +675,8 @@ export default function AboutPage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-[var(--text-light)] text-[var(--text-light)] hover:bg-[var(--text-light)] hover:text-[var(--primary-red)]"
               >
                 <svg
                   className="w-5 h-5 mr-2"

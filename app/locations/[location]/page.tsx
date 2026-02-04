@@ -269,13 +269,13 @@ export default async function LocationPage({
               </span>
 
               {/* H1 - Serif styling like design reference */}
-              <h1 className="font-serif text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.1] mb-6 text-[var(--text-dark)]">
+              <h1 className="font-serif leading-[1.1] text-[var(--text-dark)]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>
                 <span className="block">{location.name}</span>
                 <span className="block text-[var(--primary-red)]">Digital Marketing</span>
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg md:text-xl text-[var(--text-grey)] mb-8 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-[var(--text-grey)] mb-8 leading-relaxed max-w-xl" style={{ paddingTop: "48px" }}>
                 {isDakabin
                   ? "Proudly based right here in Dakabin, we are your neighbours and your digital marketing partner. Local expertise, genuine care."
                   : `Just minutes from our Dakabin office, we provide hands-on digital marketing support for ${location.name} businesses.`}
@@ -649,15 +649,16 @@ export default async function LocationPage({
               >
                 Book a Free Consultation
               </Button>
-              <a
+              <Button
                 href="tel:+61493992661"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white/10 text-[var(--text-light)] border-2 border-white hover:bg-white hover:text-[var(--red-ox-red-text)] transition-all duration-200 min-h-[52px]"
+                variant="lightOutline"
+                size="lg"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 Call Us Now
-              </a>
+              </Button>
             </div>
 
             <p className="text-[var(--text-light)]/70 text-sm mt-8">

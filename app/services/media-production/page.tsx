@@ -380,8 +380,8 @@ export default function MediaProductionPage() {
       <Section background="cream" padding="lg">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Corporate Photography & Business Photographer</h1>
-            <h2 className="text-2xl font-semibold text-[var(--text-dark)] mb-6">
+            <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Corporate Photography & Business Photographer</h1>
+            <h2 className="text-2xl font-semibold text-[var(--text-dark)] mb-6" style={{ paddingTop: "48px" }}>
               Freelance Videographer Services in North Brisbane
             </h2>
             <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -606,9 +606,8 @@ export default function MediaProductionPage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 Call 0493 992 661
               </Button>

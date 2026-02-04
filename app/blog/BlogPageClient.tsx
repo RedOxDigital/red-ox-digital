@@ -307,10 +307,10 @@ export default function BlogPageClient() {
               <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-4">
                 Our Blog
               </p>
-              <h1 className="mb-6">
+              <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>
                 Digital Marketing Tips for Small Business
               </h1>
-              <p className="text-lg md:text-xl text-[var(--text-grey)]">
+              <p className="text-lg md:text-xl text-[var(--text-grey)]" style={{ paddingTop: "48px" }}>
                 Practical advice to help your North Brisbane business grow online.
                 No jargon, no fluff. Just useful information you can actually use.
               </p>
@@ -462,9 +462,8 @@ export default function BlogPageClient() {
               </Button>
               <Button
                 href="/services"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 View Our Services
               </Button>

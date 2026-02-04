@@ -264,8 +264,8 @@ export default function ContactPage() {
               <p className="text-[var(--primary-red)] font-semibold text-sm uppercase tracking-wide mb-4">
                 Get in Touch
               </p>
-              <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] mb-6">Let Us Chat About Your Business</h1>
-              <p className="text-lg md:text-xl text-[var(--text-grey)]">
+              <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Let Us Chat About Your Business</h1>
+              <p className="text-lg md:text-xl text-[var(--text-grey)]" style={{ paddingTop: "48px" }}>
                 Ready to grow your business? Have a question? Just want to say hi?
                 We would love to hear from you. No pressure, no hard sell. Just a
                 friendly chat about how we can help.
@@ -495,20 +495,22 @@ export default function ContactPage() {
               chat about your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Button
                 href="tel:+61493992661"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--text-light)] text-[var(--primary-red)] font-semibold rounded-[var(--radius-pill)] hover:opacity-90 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(0,0,0,0.15)] min-h-[52px]"
+                variant="light"
+                size="lg"
               >
                 <Phone className="w-5 h-5" />
                 Call 0493 992 661
-              </a>
-              <a
+              </Button>
+              <Button
                 href="mailto:info@redoxdigital.com.au"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[var(--text-light)] text-[var(--text-light)] font-semibold rounded-[var(--radius-pill)] hover:bg-[var(--text-light)] hover:text-[var(--primary-red)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] min-h-[52px]"
+                variant="lightOutline"
+                size="lg"
               >
                 <Mail className="w-5 h-5" />
                 Email Us
-              </a>
+              </Button>
             </div>
             <p className="text-[var(--text-light)]/70 text-sm mt-6">
               Based in Dakabin, serving all of North Brisbane

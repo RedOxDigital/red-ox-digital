@@ -158,10 +158,10 @@ export function ServicesPageContent() {
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto">
             <p className="text-[var(--primary-red)] font-semibold mb-4">Our Services</p>
-            <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] mb-6">
+            <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>
               Full-Service Digital Marketing for North Brisbane
             </h1>
-            <p className="text-[var(--text-grey)] text-lg mb-8">
+            <p className="text-[var(--text-grey)] text-lg mb-8" style={{ paddingTop: "48px" }}>
               Everything your business needs to grow online, from one local partner.
               No agencies, no middlemen, just results.
             </p>
@@ -331,9 +331,8 @@ export function ServicesPageContent() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-[var(--text-light)] text-[var(--text-light)] hover:bg-[var(--text-light)] hover:text-[var(--primary-red)]"
               >
                 Call 0493 992 661
               </Button>

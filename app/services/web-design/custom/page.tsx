@@ -222,8 +222,8 @@ export default function CustomWebDesignPage() {
       {/* Hero Section */}
       <Section background="offWhite" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="mb-6">Custom Web Design Solutions</h1>
-          <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+          <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Custom Web Design Solutions</h1>
+          <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto" style={{ paddingTop: "48px" }}>
             When templates are not enough, custom design delivers. We build one-of-a-kind websites
             designed around your brand, your customers, and your specific business goals.
           </p>
@@ -412,9 +412,8 @@ export default function CustomWebDesignPage() {
             </Button>
             <Button
               href="tel:+61493992661"
-              variant="outline"
+              variant="lightOutline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
             >
               Call 0493 992 661
             </Button>

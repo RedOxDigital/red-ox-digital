@@ -272,8 +272,8 @@ export default function PaidAdsPage() {
       <Section background="cream" padding="lg">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Google Ads Management & PPC Services</h1>
-            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+            <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Google Ads Management & PPC Services</h1>
+            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto" style={{ paddingTop: "48px" }}>
               Stop wasting money on clicks that go nowhere. Our <strong>Google Ads management</strong>{" "}
               focuses on what actually matters. Getting you leads that turn into paying customers.
             </p>
@@ -527,9 +527,8 @@ export default function PaidAdsPage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 Call 0493 992 661
               </Button>

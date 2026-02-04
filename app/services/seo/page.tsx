@@ -278,8 +278,8 @@ export default function SEOServicesPage() {
       <Section background="cream" padding="lg">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">SEO Services to Grow Your Traffic</h1>
-            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+            <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>SEO Services to Grow Your Traffic</h1>
+            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto" style={{ paddingTop: "48px" }}>
               Your customers are searching for what you offer right now. The question is whether they
               find you or your competitors. Our <strong>SEO services</strong> help your business show
               up when it matters most.
@@ -410,9 +410,8 @@ export default function SEOServicesPage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 Call 0493 992 661
               </Button>

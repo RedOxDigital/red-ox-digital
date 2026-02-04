@@ -383,12 +383,12 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#F5F0E6] overflow-hidden py-12 md:py-16 lg:py-24">
+      <section className="bg-[#F5F0E6] overflow-hidden pt-8 pb-12 sm:pt-12 sm:pb-14 md:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left: Content with line-by-line animation */}
             <div>
-              <h1 className="font-serif text-[2.25rem] sm:text-[3rem] lg:text-[4.5rem] leading-[1.2] mb-8 sm:mb-10 lg:mb-12 text-[#1A1A1A]">
+              <h1 className="font-serif leading-[1.1] text-[#1A1A1A]" style={{ fontSize: "clamp(2.75rem, 8vw, 4.5rem)" }}>
                 <span
                   className="block opacity-0 translate-y-10"
                   style={{ animation: "slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
@@ -410,7 +410,7 @@ export default function HomePage() {
               </h1>
               <p
                 className="text-lg lg:text-xl text-[#555555] mb-8 lg:max-w-[90%] leading-relaxed opacity-0"
-                style={{ animation: "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards" }}
+                style={{ paddingTop: "72px", animation: "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards" }}
               >
                 Stop losing customers to competitors who show up first on Google.
                 Get a simple, clear marketing strategy that brings in real leads, not just clicks.
@@ -852,9 +852,8 @@ export default function HomePage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-[var(--text-light)] text-[var(--text-light)] hover:bg-[var(--text-light)] hover:text-[var(--primary-red)]"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

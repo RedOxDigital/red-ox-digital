@@ -752,8 +752,8 @@ export default async function BlogPostPage({
               <span className="inline-block px-3 py-1 bg-[var(--primary-red)] text-white text-xs font-semibold rounded-full mb-4">
                 {post.category}
               </span>
-              <h1 className="mb-6">{post.title}</h1>
-              <div className="flex items-center justify-center gap-3 text-[var(--text-grey)]">
+              <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>{post.title}</h1>
+              <div className="flex items-center justify-center gap-3 text-[var(--text-grey)]" style={{ paddingTop: "48px" }}>
                 <span>{post.date}</span>
                 <span className="w-1 h-1 bg-[var(--text-grey)] rounded-full" />
                 <span>{post.readTime}</span>
@@ -838,9 +838,8 @@ export default async function BlogPostPage({
               </Button>
               <Button
                 href="/services"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 View Our Services
               </Button>

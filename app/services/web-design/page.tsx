@@ -367,8 +367,8 @@ export default function WebDesignPage() {
       <Section background="cream" padding="lg">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Website Designer & Development Services</h1>
-            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+            <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Website Designer & Development Services</h1>
+            <p className="text-xl text-[var(--text-grey)] mb-4 leading-relaxed max-w-3xl mx-auto" style={{ paddingTop: "48px" }}>
               As a <strong>Freelance Web Designer</strong> based in North Brisbane, I help small
               businesses get websites that actually work. Not just something that looks nice, but a
               site that brings in leads and grows your business.
@@ -499,9 +499,8 @@ export default function WebDesignPage() {
               </Button>
               <Button
                 href="tel:+61493992661"
-                variant="outline"
+                variant="lightOutline"
                 size="lg"
-                className="border-white text-[var(--text-light)] hover:bg-white hover:text-[var(--red-ox-red-text)]"
               >
                 Call 0493 992 661
               </Button>

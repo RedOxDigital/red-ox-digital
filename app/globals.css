@@ -190,9 +190,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
 }
 
-h1 {
-  font-size: clamp(2rem, 5vw, 4.5rem);
-}
+/* h1 font-size removed - use Tailwind classes or inline styles for specific sizing */
 
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -617,14 +615,25 @@ a.text-black:hover {
 
 @media (max-width: 600px) {
   .gallery-bento {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 16/10;
   }
   .gallery-item.g-lg,
-  .gallery-item.g-md { grid-column: span 4; grid-row: span 2; }
-  .gallery-item.g-sm { grid-column: span 2; grid-row: span 2; }
-  .gallery-item.g-wide { grid-column: span 4; grid-row: span 1; }
-  .gallery-item.g-sq { grid-column: span 2; grid-row: span 1; }
+  .gallery-item.g-md {
+    aspect-ratio: 4/3;
+  }
+  .gallery-item.g-sm,
+  .gallery-item.g-sq {
+    aspect-ratio: 16/10;
+  }
+  .gallery-item.g-wide {
+    aspect-ratio: 2/1;
+  }
   .gallery-info { padding: 8px 10px; }
   .gallery-info-title { font-size: 0.75rem; }
 }

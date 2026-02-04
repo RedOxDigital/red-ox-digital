@@ -21,7 +21,9 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent text-[var(--text-dark)] rounded-[var(--radius-sm)] hover:bg-[var(--bg-off-white)] focus:ring-[var(--text-dark)]",
         light:
-          "bg-white text-[var(--primary-red)] rounded-[50px] hover:bg-[var(--bg-off-white)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] focus:ring-white",
+          "bg-[var(--text-dark)] text-white border border-[var(--text-dark)] rounded-[50px] hover:bg-[var(--text-dark)]/90 hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(0,0,0,0.2)] focus:ring-[var(--text-dark)]",
+        lightOutline:
+          "bg-transparent border-2 border-white text-white rounded-[50px] hover:bg-white hover:text-[var(--primary-red)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] focus:ring-white",
         destructive:
           "bg-[hsl(var(--destructive))] text-white rounded-[var(--radius-sm)] hover:bg-[hsl(var(--destructive))]/90 focus:ring-[hsl(var(--destructive))]",
         link: "text-[var(--primary-red)] underline-offset-4 hover:underline focus:ring-0",

@@ -120,7 +120,7 @@ export function Header() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-6 py-2.5 text-[0.85rem] font-semibold rounded-[var(--radius-sm)] bg-[var(--primary-red)] text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] active:-translate-y-[1px] active:shadow-[0_6px_16px_rgba(194,59,34,0.25)]"
               >
-                WPP / Ogilvy
+                Contact Us
               </Link>
             </div>
 

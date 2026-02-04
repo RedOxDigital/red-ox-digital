@@ -250,8 +250,8 @@ export default function WebsiteRedesignPage() {
       {/* Hero Section */}
       <Section background="offWhite" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="mb-6">Website Redesign Services</h1>
-          <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto">
+          <h1 className="font-serif leading-[1.1]" style={{ fontSize: "clamp(2.75rem, 8vw, 4rem)" }}>Website Redesign Services</h1>
+          <p className="text-xl text-[var(--medium-grey)] mb-4 leading-relaxed max-w-3xl mx-auto" style={{ paddingTop: "48px" }}>
             Your website has served you well, but it is time for a refresh. We transform outdated
             sites into modern, fast, mobile-friendly experiences that convert visitors into customers.
           </p>
@@ -492,9 +492,8 @@ export default function WebsiteRedesignPage() {
             </Button>
             <Button
               href="tel:+61493992661"
-              variant="outline"
+              variant="lightOutline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--red-ox-red-text)]"
             >
               Call 0493 992 661
             </Button>
