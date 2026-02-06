@@ -1,25 +1,9 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { Mail, Phone, User, MessageSquare } from "lucide-react";
+import { useEffect } from "react";
+import { Mail, Phone } from "lucide-react";
 
 import { Button, Section, SectionHeader, ScrollReveal, ScrollRevealGroup } from "@/components/ui";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  contactFormSchema,
-  type ContactFormValues,
-} from "@/lib/validations/contact";
 
 // Service areas
 const serviceAreas = [
@@ -33,137 +17,52 @@ const serviceAreas = [
   { name: "Petrie", description: "Local marketing support" },
 ];
 
-// Contact form component using shadcn/ui Form
-function ContactForm() {
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
+// JotForm embed component
+function JotFormEmbed() {
+  useEffect(() => {
+    // Load JotForm embed handler script
+    const script = document.createElement("script");
+    script.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    script.async = true;
+    script.onload = () => {
+      if (typeof window !== "undefined" && (window as unknown as { jotformEmbedHandler?: (selector: string, url: string) => void }).jotformEmbedHandler) {
+        (window as unknown as { jotformEmbedHandler: (selector: string, url: string) => void }).jotformEmbedHandler(
+          "iframe[id='JotFormIFrame-contact-252807783245060']",
+          "https://form.jotform.com/"
+        );
+      }
+    };
+    document.body.appendChild(script);
 
-  async function onSubmit(values: ContactFormValues) {
-    try {
-      // Simulate form submission (replace with actual form handling)
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      toast.success("Message sent!", {
-        description:
-          "Thanks for reaching out! We'll get back to you within 24 hours.",
-      });
-
-      form.reset();
-    } catch {
-      toast.error("Something went wrong", {
-        description: "Please try again or call us directly.",
-      });
-    }
-  }
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src*="for-form-embed-handler.js"]');
+      if (existingScript && existingScript.parentNode) {
+        existingScript.parentNode.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {/* Name Field */}
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>
-                Your Name <span className="text-[var(--primary-red)]">*</span>
-              </FormLabel>
-              <FormControl>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--text-grey)]" />
-                  <Input placeholder="John Smith" className="pl-11" {...field} />
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* Email Field */}
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>
-                Email Address <span className="text-[var(--primary-red)]">*</span>
-              </FormLabel>
-              <FormControl>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--text-grey)]" />
-                  <Input
-                    placeholder="john@example.com"
-                    type="email"
-                    className="pl-11"
-                    {...field}
-                  />
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* Phone Field */}
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--text-grey)]" />
-                  <Input
-                    placeholder="0493 992 661"
-                    type="tel"
-                    className="pl-11"
-                    {...field}
-                  />
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* Message Field */}
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>
-                Your Message <span className="text-[var(--primary-red)]">*</span>
-              </FormLabel>
-              <FormControl>
-                <div className="relative">
-                  <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-[var(--text-grey)]" />
-                  <Textarea
-                    placeholder="Tell us about your business and what you are looking to achieve..."
-                    className="pl-11 min-h-[140px]"
-                    {...field}
-                  />
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* Submit Button */}
-        <Button type="submit" fullWidth isLoading={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-        </Button>
-      </form>
-    </Form>
+    <div className="bg-[var(--bg-off-white)] rounded-[var(--radius-md)] overflow-hidden">
+      <iframe
+        id="JotFormIFrame-contact-252807783245060"
+        title="Client Intake Form"
+        onLoad={() => {
+          window.parent.scrollTo(0, 0);
+        }}
+        allowFullScreen
+        allow="geolocation; microphone; camera; fullscreen; payment"
+        src="https://form.jotform.com/252807783245060"
+        frameBorder={0}
+        style={{
+          minWidth: "100%",
+          maxWidth: "100%",
+          height: "539px",
+          border: "none",
+        }}
+      />
+    </div>
   );
 }
 
@@ -288,7 +187,7 @@ export default function ContactPage() {
                 Fill out the form below and we will get back to you within 24
                 hours. Usually much sooner.
               </p>
-              <ContactForm />
+              <JotFormEmbed />
             </div>
           </ScrollReveal>
 

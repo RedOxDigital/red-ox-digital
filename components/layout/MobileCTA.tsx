@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useJotFormModal } from "@/components/ui/JotFormModal";
 
 // Mobile sticky CTA bar (shows on mobile only)
 export function MobileCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const { openModal } = useJotFormModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,9 +47,9 @@ export function MobileCTA() {
         </a>
 
         {/* Contact Button */}
-        <Link
-          href="/contact"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--primary-red)] text-white font-semibold py-3 px-4 rounded-[var(--radius-sm)] min-h-[44px] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
+        <button
+          onClick={openModal}
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--primary-red)] text-white font-semibold py-3 px-4 rounded-[var(--radius-sm)] min-h-[44px] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] cursor-pointer"
           aria-label="Contact Red Ox Digital"
         >
           <svg
@@ -66,7 +67,7 @@ export function MobileCTA() {
             />
           </svg>
           Get Quote
-        </Link>
+        </button>
       </div>
     </div>
   );

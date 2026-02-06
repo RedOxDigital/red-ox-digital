@@ -4,6 +4,7 @@ import { Header, Footer, MobileCTA } from "@/components/layout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Toaster } from "@/components/ui/sonner";
+import { JotFormModalProvider } from "@/components/ui/JotFormModal";
 import "./globals.css";
 
 // Google Analytics Measurement ID - Replace with your actual ID
@@ -132,33 +133,35 @@ export default function RootLayout({
         {/* Google Analytics */}
         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
 
-        {/* Skip to main content for accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded"
-        >
-          Skip to main content
-        </a>
+        <JotFormModalProvider>
+          {/* Skip to main content for accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded"
+          >
+            Skip to main content
+          </a>
 
-        {/* Header */}
-        <Header />
+          {/* Header */}
+          <Header />
 
-        {/* Main content */}
-        <main id="main-content" className="flex-grow">
-          {children}
-        </main>
+          {/* Main content */}
+          <main id="main-content" className="flex-grow">
+            {children}
+          </main>
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
 
-        {/* Mobile sticky CTA */}
-        <MobileCTA />
+          {/* Mobile sticky CTA */}
+          <MobileCTA />
 
-        {/* Cookie Consent Banner */}
-        <CookieConsent />
+          {/* Cookie Consent Banner */}
+          <CookieConsent />
 
-        {/* Toast Notifications */}
-        <Toaster position="top-right" />
+          {/* Toast Notifications */}
+          <Toaster position="top-right" />
+        </JotFormModalProvider>
       </body>
     </html>
   );

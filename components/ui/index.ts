@@ -26,3 +26,5 @@ export type { GallerySize, GalleryItem, BentoGalleryProps } from "./BentoGallery
 
 export { ExpandableCard, ExpandableCardGrid } from "./ExpandableCard";
 export type { ExpandableCardProps, ExpandableCardGridProps } from "./ExpandableCard";
+
+export { JotFormModal, JotFormModalProvider, useJotFormModal, CTAButton } from "./JotFormModal";

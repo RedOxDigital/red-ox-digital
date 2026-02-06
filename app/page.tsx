@@ -16,6 +16,7 @@ import {
   ScrollRevealGroup,
   Carousel,
   BentoGallery,
+  CTAButton,
 } from "@/components/ui";
 import type { GalleryItem, CarouselSlide } from "@/components/ui";
 import { generateLocalBusinessSchema, generateFAQSchema, renderSchema } from "@/lib/schema";
@@ -419,9 +420,9 @@ export default function HomePage() {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0"
                 style={{ animation: "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards" }}
               >
-                <Button href="/contact" size="lg" className="w-full sm:w-auto">
+                <CTAButton size="lg" className="w-full sm:w-auto">
                   Book a Free Discovery Call
-                </Button>
+                </CTAButton>
                 <Button href="#services" variant="outline" size="lg" className="w-full sm:w-auto">
                   See Our Services
                 </Button>
@@ -655,9 +656,9 @@ export default function HomePage() {
         </ScrollRevealGroup>
         <ScrollReveal delay={2}>
           <div className="text-center mt-12">
-            <Button href="/contact" variant="primary" size="lg">
+            <CTAButton variant="primary" size="lg">
               Start Your Journey
-            </Button>
+            </CTAButton>
           </div>
         </ScrollReveal>
       </Section>
@@ -798,9 +799,9 @@ export default function HomePage() {
         </ScrollReveal>
         <ScrollReveal delay={2}>
           <div className="text-center mt-12">
-            <Button href="/contact" variant="outline">
+            <CTAButton variant="outline">
               Start Your Project
-            </Button>
+            </CTAButton>
           </div>
         </ScrollReveal>
       </Section>
@@ -824,9 +825,9 @@ export default function HomePage() {
             <p className="text-[var(--text-grey)] mb-4">
               Still have questions? We are happy to chat.
             </p>
-            <Button href="/contact" variant="outline">
+            <CTAButton variant="outline">
               Get in Touch
-            </Button>
+            </CTAButton>
           </div>
         </ScrollReveal>
       </Section>
@@ -843,13 +844,12 @@ export default function HomePage() {
               and let us show you a clear path to more leads and more sales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
+              <CTAButton
                 variant="light"
                 size="lg"
               >
                 Book Your Free Discovery Call
-              </Button>
+              </CTAButton>
               <Button
                 href="tel:+61493992661"
                 variant="lightOutline"

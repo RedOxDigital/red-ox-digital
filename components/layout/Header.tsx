@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useJotFormModal } from "@/components/ui/JotFormModal";
 
 // Navigation items
 const navigation = [
@@ -34,6 +35,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { openModal } = useJotFormModal();
 
   // Handle scroll effect
   useEffect(() => {
@@ -116,12 +118,12 @@ export function Header() {
 
             {/* CTA Button (Desktop) - Nav button style (not pill) */}
             <div className="hidden lg:flex lg:items-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-2.5 text-[0.85rem] font-semibold rounded-[var(--radius-sm)] bg-[var(--primary-red)] text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] active:-translate-y-[1px] active:shadow-[0_6px_16px_rgba(194,59,34,0.25)]"
+              <button
+                onClick={openModal}
+                className="inline-flex items-center justify-center px-6 py-2.5 text-[0.85rem] font-semibold rounded-[var(--radius-sm)] bg-[var(--primary-red)] text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] active:-translate-y-[1px] active:shadow-[0_6px_16px_rgba(194,59,34,0.25)] cursor-pointer"
               >
                 Contact Us
-              </Link>
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -192,13 +194,15 @@ export function Header() {
                 </div>
               ))}
               <div className="pt-6">
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 text-base font-semibold rounded-[var(--radius-sm)] bg-[var(--primary-red)] text-white transition-all duration-300 hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)]"
-                  onClick={closeMobileMenu}
+                <button
+                  onClick={() => {
+                    closeMobileMenu();
+                    openModal();
+                  }}
+                  className="block w-full text-center px-6 py-3 text-base font-semibold rounded-[var(--radius-sm)] bg-[var(--primary-red)] text-white transition-all duration-300 hover:shadow-[0_12px_28px_rgba(194,59,34,0.3)] cursor-pointer"
                 >
                   Get Started
-                </Link>
+                </button>
               </div>
             </div>
           </div>
